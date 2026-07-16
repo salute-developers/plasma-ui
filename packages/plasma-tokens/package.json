@@ -1,0 +1,59 @@
+{
+  "name": "@salutejs/plasma-tokens",
+  "version": "1.143.0",
+  "description": "plasma-tokens package",
+  "author": "Salute Frontend Team <salute.developers@gmail.com>",
+  "license": "MIT",
+  "module": "es/index.js",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "prebuild": "rm -rf ./build ./colors ./es ./properties ./src ./brands ./themes ./themesValues ./typo ./typography ./typographyValues ./index.* ./theme.json ./css",
+    "build": "npm run generate && npm run build:cjs && npm run build:esm",
+    "copy-css-files": "mkdir -p ${CSS_BUILD_PATH} && cp -R src/css/* ${CSS_BUILD_PATH}",
+    "build:cjs": "tsc && CSS_BUILD_PATH=css npm run copy-css-files",
+    "build:esm": "tsc -p ./tsconfig.es.json",
+    "generate": "npx ts-node ./lib/generate.ts",
+    "figma": "npm run extract --prefix='./design-language'",
+    "lint": "../../node_modules/.bin/eslint ./src ./lib --ext .ts --quiet"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "css",
+    "colors",
+    "brands",
+    "es",
+    "themes",
+    "themesValues",
+    "typo",
+    "typography",
+    "typographyValues",
+    "index.d.ts",
+    "index.d.ts.map",
+    "index.js",
+    "index.js.map",
+    "theme.json"
+  ],
+  "peerDependencies": {
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@diez/web-sdk-common": "10.6.0",
+    "@salutejs/plasma-colors": "0.16.0",
+    "@salutejs/plasma-tokens-utils": "0.54.0",
+    "@salutejs/plasma-typo": "0.46.0",
+    "@types/node": "^22.13.13",
+    "jsdom": "17.0.0",
+    "jsdom-global": "3.0.2",
+    "styled-components": "5.3.1",
+    "ts-node": "10.2.1"
+  },
+  "contributors": [
+    "Виноградов Антон Александрович",
+    "Зубаиров Фаниль Асхатович",
+    "Vasiliy Loginevskiy"
+  ],
+  "sideEffects": false
+}

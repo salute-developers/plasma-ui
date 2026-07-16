@@ -11,10 +11,6 @@
       "types": "./lib/index.d.ts",
       "default": "./lib/index.js"
     },
-    "./managerVersions": {
-      "types": "./lib/managerVersions.d.ts",
-      "default": "./lib/managerVersions.js"
-    },
     "./package.json": "./package.json"
   },
   "repository": {
@@ -23,9 +19,8 @@
     "directory": "utils/plasma-sb-utils"
   },
   "dependencies": {
-    "@emotion/react": "11.14.0",
-    "@storybook/react": "10.3.4",
-    "param-case": "^3.0.4"
+    "@salutejs/plasma-core": "1.231.0",
+    "param-case": "3.0.4"
   },
   "peerDependencies": {
     "react": ">=16.13.1",
@@ -40,7 +35,8 @@
     "@types/node": "24.10.1",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
-    "@types/styled-components": "^5.1.0",
+    "@storybook/react-vite": "10.3.4",
+    "@types/styled-components": "5.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "5.3.1"

@@ -1,0 +1,14 @@
+/colors
+/es
+/properties
+/brands
+/typo
+/typography
+/typographyValues
+/themes
+/themesValues
+/index.*
+/theme.json
+/css
+/src/css
+/data/themes/*.html

@@ -1,0 +1,31 @@
+{
+  "name": "@salutejs/plasma-colors",
+  "version": "0.16.0",
+  "description": "All color palettes for Salute Ecosystem",
+  "author": "Salute Frontend Team <salute.developers@gmail.com>",
+  "license": "MIT",
+  "module": "es/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "rm -rf ./dist ./es ./src",
+    "build": "npm run generate && npm run build:colors",
+    "build:colors": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc",
+    "build:esm": "tsc -p ./tsconfig.es.json",
+    "generate": "npx ts-node ./lib/generate.ts",
+    "lint": "../../node_modules/.bin/eslint ./src --ext .ts --quiet"
+  },
+  "files": [
+    "dist",
+    "es"
+  ],
+  "contributors": [
+    "Vasiliy Loginevskiy",
+    "Anton Vinogradov",
+    "Fanil Zubairov"
+  ]
+}

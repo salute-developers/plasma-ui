@@ -38,6 +38,7 @@
     "@types/babel__traverse": "7.20.6",
     "@types/color": "3.0.2",
     "@types/jest": "26.0.24",
+    "@types/lodash": "^4.14.182",
     "@types/lodash.throttle": "4.1.6",
     "@types/node": "16.7.13",
     "@types/react": "18.0.28",
@@ -65,8 +66,8 @@
     "prebuild": "rm -rf ./components ./es ./helpers ./hocs ./hooks ./mixins ./tokens ./types ./utils index.d.ts index.d.ts.map index.js index.js.map",
     "build": "npm run build:cjs && npm run build:esm",
     "postbuild": "tsc --outDir . --emitDeclarationOnly",
-        "build:cjs": "BABEL_ENV=cjs SC_NAMESPACE=plasma-ui babel ./src --out-dir . --extensions .ts,.tsx --ignore '**/*.stories.tsx'",
-        "build:esm": "BABEL_ENV=esm SC_NAMESPACE=plasma-ui babel ./src --out-dir ./es --extensions .ts,.tsx --ignore '**/*.stories.tsx'",
+    "build:cjs": "BABEL_ENV=cjs SC_NAMESPACE=plasma-ui babel ./src --out-dir . --extensions .ts,.tsx --ignore '**/*.stories.tsx'",
+    "build:esm": "BABEL_ENV=esm SC_NAMESPACE=plasma-ui babel ./src --out-dir ./es --extensions .ts,.tsx --ignore '**/*.stories.tsx'",
     "storybook": "storybook dev -p ${PORT:-6006} -c .storybook",
     "storybook:build": "storybook build -c .storybook -o build-sb --quiet",
     "test": "BABEL_ENV=cjs jest",
@@ -74,7 +75,10 @@
     "lint": "../../node_modules/.bin/eslint ./src --ext .js,.ts,.tsx --quiet"
   },
   "typeCoverage": {
-    "ignoreFiles": ["src/**/*component-test.tsx", "src/**/*stories.tsx"],
+    "ignoreFiles": [
+      "src/**/*component-test.tsx",
+      "src/**/*stories.tsx"
+    ],
     "atLeast": 98.7
   },
   "contributors": [

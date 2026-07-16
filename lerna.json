@@ -1,6 +1,11 @@
 {
     "packages": [
         "packages/plasma-ui",
+        "packages/plasma-core",
+        "packages/plasma-typo",
+        "packages/plasma-colors",
+        "packages/plasma-tokens",
+        "utils/plasma-tokens-utils",
         "utils/plasma-cy-utils",
         "utils/plasma-sb-utils",
         "utils/plasma-docs-ui",
