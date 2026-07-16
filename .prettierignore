@@ -1,0 +1,29 @@
+/node_modules/
+/build
+
+# Exclude package-lock.json — npm/lerna-owned, never Prettier-formatted
+package-lock.json
+**/package-lock.json
+
+# Exclude *.api.md
+packages/plasma-b2c/api/
+packages/plasma-web/api/
+packages/plasma-hope/api/
+packages/plasma-core/api/
+packages/plasma-asdk/api/
+packages/sdds-serv/api/
+packages/sdds-dfa/api/
+packages/sdds-cs/api/
+packages/sdds-finportal/api/
+packages/sdds-clfd-auto/api/
+packages/sdds-insol/api/
+packages/plasma-giga/api/
+packages/sdds-sber-os/api/
+
+utils/plasma-cy-utils/lib
+
+# Exclude *.diff
+reports
+
+scaffold/template-docs
+scaffold/template-component

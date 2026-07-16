@@ -1,0 +1,41 @@
+{
+  "name": "@salutejs/plasma-cy-utils",
+  "version": "0.161.0",
+  "description": "Test helpers shared between ui libraries.",
+  "author": "Salute Frontend Team <salute.developers@gmail.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:salute-developers/plasma.git",
+    "directory": "utils/plasma-cy-utils"
+  },
+  "peerDependencies": {
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "scripts": {
+    "prebuild": "rm -rf lib",
+    "build": "tsc --project ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@cypress/react": "5.12.0",
+    "@types/node": "18.16.20",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "@types/react-native": "0.69.6",
+    "@types/styled-components": "5.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "styled-components": "5.1.1",
+    "typescript": "5.6.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib"
+  ]
+}

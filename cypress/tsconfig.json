@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "NodeNext",
+        "lib": ["esnext", "dom"],
+        "types": [
+            "cypress",
+            "@testing-library/cypress",
+            "node",
+            "cypress-axe",
+            "cypress-real-events",
+            "cypress-file-upload"
+        ],
+        "allowJs": true,
+        "moduleResolution": "nodenext",
+        "esModuleInterop": true,
+        "resolveJsonModule": true
+    },
+    "include": ["**/*.ts", "plugins/index.ts"]
+}

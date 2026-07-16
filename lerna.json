@@ -1,0 +1,25 @@
+{
+    "packages": [
+        "packages/plasma-ui",
+        "utils/plasma-cy-utils",
+        "utils/plasma-sb-utils",
+        "utils/plasma-docs-ui",
+        "website/plasma-ui-docs"
+    ],
+    "version": "independent",
+    "ignoreChanges": ["*.md", "*.component-test.tsx", "package-lock.json"],
+    "loglevel": "verbose",
+    "exact": true,
+    "command": {
+        "bootstrap": {
+            "npmClientArgs": ["--no-audit", "--loglevel error", "--no-progress", "--unsafe-perm"]
+        },
+        "publish": {
+            "verifyAccess": false
+        },
+        "list": {
+            "ignoreChanges": ["*.md", "package-lock.json"]
+        }
+    },
+    "$schema": "node_modules/lerna/schemas/lerna-schema.json"
+}

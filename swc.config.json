@@ -1,0 +1,22 @@
+{
+    "minify": false,
+    "jsc": {
+        "target": "es2020",
+        "parser": {
+            "syntax": "typescript"
+        },
+        "experimental": {
+            "plugins": [
+                ["@swc/plugin-emotion", {}],
+                [
+                    "@swc/plugin-styled-components",
+                    {
+                        "displayName": true,
+                        "ssr": true
+                    }
+                ]
+            ]
+        }
+    },
+    "exclude": [".*\\.stories.tsx$", ".*\\.component-test.tsx$"]
+}

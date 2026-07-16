@@ -1,0 +1,944 @@
+0 silly argv {
+0 silly argv   _: [ 'bootstrap' ],
+0 silly argv   lernaVersion: '6.5.1',
+0 silly argv   '$0': '/Users/shuga2704/Desktop/plasma-ui/node_modules/.bin/lerna'
+0 silly argv }
+1 notice cli v6.5.1
+2 verbose rootPath /Users/shuga2704/Desktop/plasma-ui
+3 info versioning independent
+4 silly npmConfig {
+4 silly npmConfig   registry: undefined,
+4 silly npmConfig   npmClient: 'npm',
+4 silly npmConfig   npmClientArgs: [
+4 silly npmConfig     '--no-audit',
+4 silly npmConfig     '--loglevel error',
+4 silly npmConfig     '--no-progress',
+4 silly npmConfig     '--unsafe-perm'
+4 silly npmConfig   ],
+4 silly npmConfig   mutex: undefined
+4 silly npmConfig }
+5 info Bootstrapping 10 packages
+6 verbose lifecycle preinstall
+7 silly lifecycle No script for "preinstall" in "@salutejs/plasma-colors", continuing
+8 silly lifecycle No script for "preinstall" in "@salutejs/plasma-icons", continuing
+9 silly lifecycle No script for "preinstall" in "@salutejs/plasma-typo", continuing
+10 silly lifecycle No script for "preinstall" in "@salutejs/plasma-tokens", continuing
+11 silly lifecycle No script for "preinstall" in "@salutejs/plasma-cy-utils", continuing
+12 silly lifecycle No script for "preinstall" in "@salutejs/plasma-core", continuing
+13 silly lifecycle No script for "preinstall" in "@salutejs/plasma-sb-utils", continuing
+14 silly lifecycle No script for "preinstall" in "@salutejs/plasma-ui", continuing
+15 silly lifecycle No script for "preinstall" in "@salutejs/plasma-docs-ui", continuing
+16 silly lifecycle No script for "preinstall" in "@salutejs/plasma-ui-docs", continuing
+17 silly hasDependencyInstalled @salutejs/plasma-core @babel/cli
+18 silly hasDependencyInstalled @salutejs/plasma-icons @babel/cli
+19 silly hasDependencyInstalled @salutejs/plasma-ui @babel/cli
+20 silly hasDependencyInstalled @salutejs/plasma-core @babel/core
+21 silly hasDependencyInstalled @salutejs/plasma-ui @babel/core
+22 silly hasDependencyInstalled @salutejs/plasma-icons @babel/core
+23 silly hasDependencyInstalled @salutejs/plasma-core @babel/plugin-transform-class-properties
+24 silly hasDependencyInstalled @salutejs/plasma-icons @babel/plugin-transform-class-properties
+25 silly hasDependencyInstalled @salutejs/plasma-ui @babel/plugin-transform-class-properties
+26 silly hasDependencyInstalled @salutejs/plasma-core @babel/plugin-transform-react-constant-elements
+27 silly hasDependencyInstalled @salutejs/plasma-icons @babel/plugin-transform-react-constant-elements
+28 silly hasDependencyInstalled @salutejs/plasma-ui @babel/plugin-transform-react-constant-elements
+29 silly hasDependencyInstalled @salutejs/plasma-core @babel/preset-env
+30 silly hasDependencyInstalled @salutejs/plasma-icons @babel/preset-env
+31 silly hasDependencyInstalled @salutejs/plasma-ui @babel/preset-env
+32 silly hasDependencyInstalled @salutejs/plasma-core @babel/preset-react
+33 silly hasDependencyInstalled @salutejs/plasma-icons @babel/preset-react
+34 silly hasDependencyInstalled @salutejs/plasma-ui @babel/preset-react
+35 silly hasDependencyInstalled @salutejs/plasma-core @babel/preset-typescript
+36 silly hasDependencyInstalled @salutejs/plasma-icons @babel/preset-typescript
+37 silly hasDependencyInstalled @salutejs/plasma-ui @babel/preset-typescript
+38 silly hasDependencyInstalled @salutejs/plasma-cy-utils @cypress/react
+39 silly hasDependencyInstalled @salutejs/plasma-sb-utils @storybook/react
+40 silly hasDependencyInstalled @salutejs/plasma-core @types/node
+41 silly hasDependencyInstalled @salutejs/plasma-icons @types/node
+42 silly hasDependencyInstalled @salutejs/plasma-tokens @types/node
+43 silly hasDependencyInstalled @salutejs/plasma-typo @types/node
+44 silly hasDependencyInstalled @salutejs/plasma-ui @types/node
+45 silly hasDependencyInstalled @salutejs/plasma-cy-utils @types/node
+46 silly hasDependencyInstalled @salutejs/plasma-sb-utils @types/node
+47 silly hasDependencyInstalled @salutejs/plasma-core babel-loader
+48 silly hasDependencyInstalled @salutejs/plasma-ui babel-loader
+49 silly hasDependencyInstalled @salutejs/plasma-icons babel-loader
+50 silly hasDependencyInstalled @salutejs/plasma-core babel-plugin-annotate-pure-calls
+51 silly hasDependencyInstalled @salutejs/plasma-icons babel-plugin-annotate-pure-calls
+52 silly hasDependencyInstalled @salutejs/plasma-ui babel-plugin-annotate-pure-calls
+53 silly hasDependencyInstalled @salutejs/plasma-core babel-plugin-styled-components
+54 silly hasDependencyInstalled @salutejs/plasma-ui babel-plugin-styled-components
+55 silly hasDependencyInstalled @salutejs/plasma-icons babel-plugin-styled-components
+56 silly hasDependencyInstalled @salutejs/plasma-ui-docs file-loader
+57 silly hasDependencyInstalled @salutejs/plasma-core react
+58 silly hasDependencyInstalled @salutejs/plasma-typo react
+59 silly hasDependencyInstalled @salutejs/plasma-ui react
+60 silly hasDependencyInstalled @salutejs/plasma-cy-utils react
+61 silly hasDependencyInstalled @salutejs/plasma-docs-ui react
+62 silly hasDependencyInstalled @salutejs/plasma-sb-utils react
+63 silly hasDependencyInstalled @salutejs/plasma-ui-docs react
+64 silly hasDependencyInstalled @salutejs/plasma-icons react
+65 silly hasDependencyInstalled @salutejs/plasma-core react-dom
+66 silly hasDependencyInstalled @salutejs/plasma-typo react-dom
+67 silly hasDependencyInstalled @salutejs/plasma-ui react-dom
+68 silly hasDependencyInstalled @salutejs/plasma-cy-utils react-dom
+69 silly hasDependencyInstalled @salutejs/plasma-docs-ui react-dom
+70 silly hasDependencyInstalled @salutejs/plasma-sb-utils react-dom
+71 silly hasDependencyInstalled @salutejs/plasma-ui-docs react-dom
+72 silly hasDependencyInstalled @salutejs/plasma-icons react-dom
+73 silly hasDependencyInstalled @salutejs/plasma-core styled-components
+74 silly hasDependencyInstalled @salutejs/plasma-icons styled-components
+75 silly hasDependencyInstalled @salutejs/plasma-tokens styled-components
+76 silly hasDependencyInstalled @salutejs/plasma-typo styled-components
+77 silly hasDependencyInstalled @salutejs/plasma-ui styled-components
+78 silly hasDependencyInstalled @salutejs/plasma-docs-ui styled-components
+79 silly hasDependencyInstalled @salutejs/plasma-sb-utils styled-components
+80 silly hasDependencyInstalled @salutejs/plasma-cy-utils styled-components
+81 silly hasDependencyInstalled @salutejs/plasma-ui-docs styled-components
+82 silly hasDependencyInstalled @salutejs/plasma-cy-utils typescript
+83 silly hasDependencyInstalled @salutejs/plasma-ui typescript
+84 silly hasDependencyInstalled @salutejs/plasma-ui-docs typescript
+85 silly hasDependencyInstalled @salutejs/plasma-core @types/jest
+86 silly hasDependencyInstalled @salutejs/plasma-ui @types/jest
+87 silly hasDependencyInstalled @salutejs/plasma-core @types/lodash.throttle
+88 silly hasDependencyInstalled @salutejs/plasma-ui @types/lodash.throttle
+89 silly hasDependencyInstalled @salutejs/plasma-core @types/react
+90 silly hasDependencyInstalled @salutejs/plasma-typo @types/react
+91 silly hasDependencyInstalled @salutejs/plasma-ui @types/react
+92 silly hasDependencyInstalled @salutejs/plasma-cy-utils @types/react
+93 silly hasDependencyInstalled @salutejs/plasma-docs-ui @types/react
+94 silly hasDependencyInstalled @salutejs/plasma-sb-utils @types/react
+95 silly hasDependencyInstalled @salutejs/plasma-ui-docs @types/react
+96 silly hasDependencyInstalled @salutejs/plasma-icons @types/react
+97 silly hasDependencyInstalled @salutejs/plasma-core @types/react-dom
+98 silly hasDependencyInstalled @salutejs/plasma-typo @types/react-dom
+99 silly hasDependencyInstalled @salutejs/plasma-ui @types/react-dom
+100 silly hasDependencyInstalled @salutejs/plasma-cy-utils @types/react-dom
+101 silly hasDependencyInstalled @salutejs/plasma-docs-ui @types/react-dom
+102 silly hasDependencyInstalled @salutejs/plasma-sb-utils @types/react-dom
+103 silly hasDependencyInstalled @salutejs/plasma-icons @types/react-dom
+104 silly hasDependencyInstalled @salutejs/plasma-core @types/resize-observer-browser
+105 silly hasDependencyInstalled @salutejs/plasma-ui @types/resize-observer-browser
+106 silly hasDependencyInstalled @salutejs/plasma-core @types/styled-components
+107 silly hasDependencyInstalled @salutejs/plasma-typo @types/styled-components
+108 silly hasDependencyInstalled @salutejs/plasma-ui @types/styled-components
+109 silly hasDependencyInstalled @salutejs/plasma-cy-utils @types/styled-components
+110 silly hasDependencyInstalled @salutejs/plasma-docs-ui @types/styled-components
+111 silly hasDependencyInstalled @salutejs/plasma-ui-docs @types/styled-components
+112 silly hasDependencyInstalled @salutejs/plasma-icons @types/styled-components
+113 silly hasDependencyInstalled @salutejs/plasma-sb-utils @types/styled-components
+114 silly hasDependencyInstalled @salutejs/plasma-core full-icu
+115 silly hasDependencyInstalled @salutejs/plasma-core jest
+116 silly hasDependencyInstalled @salutejs/plasma-ui jest
+117 silly hasDependencyInstalled @salutejs/plasma-core ts-jest
+118 silly hasDependencyInstalled @salutejs/plasma-ui ts-jest
+119 silly hasDependencyInstalled @salutejs/plasma-core ts-node
+120 silly hasDependencyInstalled @salutejs/plasma-tokens ts-node
+121 silly hasDependencyInstalled @salutejs/plasma-core typescript-coverage-report
+122 silly hasDependencyInstalled @salutejs/plasma-ui typescript-coverage-report
+123 silly hasDependencyInstalled @salutejs/plasma-core @popperjs/core
+124 silly hasDependencyInstalled @salutejs/plasma-core focus-visible
+125 silly hasDependencyInstalled @salutejs/plasma-core lodash.throttle
+126 silly hasDependencyInstalled @salutejs/plasma-ui lodash.throttle
+127 silly hasDependencyInstalled @salutejs/plasma-core react-draggable
+128 silly hasDependencyInstalled @salutejs/plasma-ui react-draggable
+129 silly hasDependencyInstalled @salutejs/plasma-core react-popper
+130 silly hasDependencyInstalled @salutejs/plasma-icons @ironkinoko/rollup-plugin-styles
+131 silly hasDependencyInstalled @salutejs/plasma-icons @linaria/babel-preset
+132 silly hasDependencyInstalled @salutejs/plasma-icons @linaria/rollup
+133 silly hasDependencyInstalled @salutejs/plasma-icons @rollup/plugin-babel
+134 silly hasDependencyInstalled @salutejs/plasma-icons @rollup/plugin-node-resolve
+135 silly hasDependencyInstalled @salutejs/plasma-icons @rollup/pluginutils
+136 silly hasDependencyInstalled @salutejs/plasma-icons @types/prettier
+137 silly hasDependencyInstalled @salutejs/plasma-icons fast-glob
+138 silly hasDependencyInstalled @salutejs/plasma-ui-docs fast-glob
+139 silly hasDependencyInstalled @salutejs/plasma-icons prettier
+140 silly hasDependencyInstalled @salutejs/plasma-icons rollup
+141 silly hasDependencyInstalled @salutejs/plasma-icons rollup-plugin-css-only
+142 silly hasDependencyInstalled @salutejs/plasma-icons sharp
+143 silly hasDependencyInstalled @salutejs/plasma-icons svg2vectordrawable
+144 silly hasDependencyInstalled @salutejs/plasma-icons vite
+145 silly hasDependencyInstalled @salutejs/plasma-icons @linaria/core
+146 silly hasDependencyInstalled @salutejs/plasma-icons @linaria/react
+147 silly hasDependencyInstalled @salutejs/plasma-tokens @diez/web-sdk-common
+148 silly hasDependencyInstalled @salutejs/plasma-tokens @salutejs/plasma-tokens-utils
+149 silly hasDependencyInstalled @salutejs/plasma-tokens jsdom
+150 silly hasDependencyInstalled @salutejs/plasma-tokens jsdom-global
+151 silly hasDependencyInstalled @salutejs/plasma-ui @salutejs/use-virtual
+152 silly hasDependencyInstalled @salutejs/plasma-ui-docs @salutejs/use-virtual
+153 silly hasDependencyInstalled @salutejs/plasma-ui @testing-library/react
+154 silly hasDependencyInstalled @salutejs/plasma-ui @types/babel__traverse
+155 silly hasDependencyInstalled @salutejs/plasma-ui @types/color
+156 silly hasDependencyInstalled @salutejs/plasma-ui default-browser-id
+157 silly hasDependencyInstalled @salutejs/plasma-ui http-server
+158 silly hasDependencyInstalled @salutejs/plasma-ui jest-styled-components
+159 silly hasDependencyInstalled @salutejs/plasma-ui color
+160 silly hasDependencyInstalled @salutejs/plasma-cy-utils @types/react-native
+161 silly hasDependencyInstalled @salutejs/plasma-docs-ui @types/qs
+162 silly hasDependencyInstalled @salutejs/plasma-docs-ui @types/marked
+163 silly hasDependencyInstalled @salutejs/plasma-docs-ui codesandbox
+164 silly hasDependencyInstalled @salutejs/plasma-docs-ui marked
+165 silly hasDependencyInstalled @salutejs/plasma-docs-ui qs
+166 silly hasDependencyInstalled @salutejs/plasma-docs-ui react-docgen-typescript
+167 silly hasDependencyInstalled @salutejs/plasma-ui-docs react-docgen-typescript
+168 silly hasDependencyInstalled @salutejs/plasma-sb-utils @emotion/react
+169 silly hasDependencyInstalled @salutejs/plasma-sb-utils param-case
+170 silly hasDependencyInstalled @salutejs/plasma-ui-docs @docusaurus/module-type-aliases
+171 silly hasDependencyInstalled @salutejs/plasma-ui-docs @tsconfig/docusaurus
+172 silly hasDependencyInstalled @salutejs/plasma-ui-docs @types/react-router-dom
+173 silly hasDependencyInstalled @salutejs/plasma-ui-docs @docusaurus/core
+174 silly hasDependencyInstalled @salutejs/plasma-ui-docs @docusaurus/faster
+175 silly hasDependencyInstalled @salutejs/plasma-ui-docs @docusaurus/preset-classic
+176 silly hasDependencyInstalled @salutejs/plasma-ui-docs @docusaurus/theme-live-codeblock
+177 silly hasDependencyInstalled @salutejs/plasma-ui-docs @mdx-js/react
+178 silly hasDependencyInstalled @salutejs/plasma-ui-docs @svgr/webpack
+179 silly hasDependencyInstalled @salutejs/plasma-ui-docs clsx
+180 silly hasDependencyInstalled @salutejs/plasma-ui-docs prism-react-renderer
+181 silly hasDependencyInstalled @salutejs/plasma-ui-docs url-loader
+182 silly root dependencies {}
+183 silly leaf dependencies {}
+184 info Installing external dependencies
+185 verbose actions 9 actions, concurrency 12
+186 silly npmInstallDependencies @salutejs/plasma-core [
+186 silly npmInstallDependencies   '@babel/cli@7.24.1',
+186 silly npmInstallDependencies   '@babel/core@7.24.4',
+186 silly npmInstallDependencies   '@babel/plugin-transform-class-properties@7.24.1',
+186 silly npmInstallDependencies   '@babel/plugin-transform-react-constant-elements@7.24.1',
+186 silly npmInstallDependencies   '@babel/preset-env@7.24.4',
+186 silly npmInstallDependencies   '@babel/preset-react@7.24.1',
+186 silly npmInstallDependencies   '@babel/preset-typescript@7.24.1',
+186 silly npmInstallDependencies   '@types/node@15.14.9',
+186 silly npmInstallDependencies   'babel-loader@8.2.2',
+186 silly npmInstallDependencies   'babel-plugin-annotate-pure-calls@0.4.0',
+186 silly npmInstallDependencies   'babel-plugin-styled-components@1.13.2',
+186 silly npmInstallDependencies   'react@18.2.0',
+186 silly npmInstallDependencies   'react-dom@18.2.0',
+186 silly npmInstallDependencies   'styled-components@5.3.1',
+186 silly npmInstallDependencies   '@types/jest@27.0.1',
+186 silly npmInstallDependencies   '@types/lodash.throttle@4.1.6',
+186 silly npmInstallDependencies   '@types/react@18.0.28',
+186 silly npmInstallDependencies   '@types/react-dom@18.0.11',
+186 silly npmInstallDependencies   '@types/resize-observer-browser@0.1.7',
+186 silly npmInstallDependencies   '@types/styled-components@5.1.0',
+186 silly npmInstallDependencies   'full-icu@1.3.4',
+186 silly npmInstallDependencies   'jest@27.1.0',
+186 silly npmInstallDependencies   'ts-jest@27.0.5',
+186 silly npmInstallDependencies   'ts-node@10.2.1',
+186 silly npmInstallDependencies   'typescript-coverage-report@0.7.0',
+186 silly npmInstallDependencies   '@popperjs/core@2.9.2',
+186 silly npmInstallDependencies   'focus-visible@5.2.0',
+186 silly npmInstallDependencies   'lodash.throttle@4.1.1',
+186 silly npmInstallDependencies   'react-draggable@4.4.3',
+186 silly npmInstallDependencies   'react-popper@2.3.0'
+186 silly npmInstallDependencies ]
+187 silly npmInstallDependencies backup /Users/shuga2704/Desktop/plasma-ui/packages/plasma-core/package.json
+188 silly npmInstallDependencies @salutejs/plasma-icons [
+188 silly npmInstallDependencies   '@babel/cli@7.24.1',
+188 silly npmInstallDependencies   '@babel/core@^7.24.4',
+188 silly npmInstallDependencies   '@babel/plugin-transform-class-properties@7.24.1',
+188 silly npmInstallDependencies   '@babel/plugin-transform-react-constant-elements@7.24.1',
+188 silly npmInstallDependencies   '@babel/preset-env@7.24.4',
+188 silly npmInstallDependencies   '@babel/preset-react@7.24.1',
+188 silly npmInstallDependencies   '@babel/preset-typescript@7.24.1',
+188 silly npmInstallDependencies   '@types/node@^16.7.13',
+188 silly npmInstallDependencies   'babel-loader@^8.2.2',
+188 silly npmInstallDependencies   'babel-plugin-annotate-pure-calls@0.4.0',
+188 silly npmInstallDependencies   'babel-plugin-styled-components@^1.13.2',
+188 silly npmInstallDependencies   'react@^18.2.0',
+188 silly npmInstallDependencies   'react-dom@^18.2.0',
+188 silly npmInstallDependencies   'styled-components@5.3.1',
+188 silly npmInstallDependencies   '@types/react@^18.0.28',
+188 silly npmInstallDependencies   '@types/react-dom@^18.0.11',
+188 silly npmInstallDependencies   '@types/styled-components@^5.1.0',
+188 silly npmInstallDependencies   '@ironkinoko/rollup-plugin-styles@^4.0.3',
+188 silly npmInstallDependencies   '@linaria/babel-preset@^5.0.4',
+188 silly npmInstallDependencies   '@linaria/rollup@^5.0.4',
+188 silly npmInstallDependencies   '@rollup/plugin-babel@^6.0.4',
+188 silly npmInstallDependencies   '@rollup/plugin-node-resolve@^15.3.0',
+188 silly npmInstallDependencies   '@rollup/pluginutils@^5.1.2',
+188 silly npmInstallDependencies   '@types/prettier@^2.6.2',
+188 silly npmInstallDependencies   'fast-glob@^3.3.2',
+188 silly npmInstallDependencies   'prettier@^2.8.8',
+188 silly npmInstallDependencies   'rollup@^3.29.5',
+188 silly npmInstallDependencies   'rollup-plugin-css-only@^4.5.2',
+188 silly npmInstallDependencies   'sharp@^0.32.6',
+188 silly npmInstallDependencies   'svg2vectordrawable@^2.9.1',
+188 silly npmInstallDependencies   'vite@4.5.3',
+188 silly npmInstallDependencies   '@linaria/core@5.0.2',
+188 silly npmInstallDependencies   '@linaria/react@5.0.3'
+188 silly npmInstallDependencies ]
+189 silly npmInstallDependencies backup /Users/shuga2704/Desktop/plasma-ui/packages/plasma-icons/package.json
+190 silly npmInstallDependencies @salutejs/plasma-ui [
+190 silly npmInstallDependencies   '@babel/cli@7.24.1',
+190 silly npmInstallDependencies   '@babel/core@7.24.4',
+190 silly npmInstallDependencies   '@babel/plugin-transform-class-properties@7.24.1',
+190 silly npmInstallDependencies   '@babel/plugin-transform-react-constant-elements@7.24.1',
+190 silly npmInstallDependencies   '@babel/preset-env@7.24.4',
+190 silly npmInstallDependencies   '@babel/preset-react@7.24.1',
+190 silly npmInstallDependencies   '@babel/preset-typescript@7.24.1',
+190 silly npmInstallDependencies   '@types/node@16.7.13',
+190 silly npmInstallDependencies   'babel-loader@8.2.2',
+190 silly npmInstallDependencies   'babel-plugin-annotate-pure-calls@0.4.0',
+190 silly npmInstallDependencies   'babel-plugin-styled-components@1.13.2',
+190 silly npmInstallDependencies   'react@18.2.0',
+190 silly npmInstallDependencies   'react-dom@18.2.0',
+190 silly npmInstallDependencies   'styled-components@5.3.1',
+190 silly npmInstallDependencies   'typescript@4.2.4',
+190 silly npmInstallDependencies   '@types/jest@26.0.24',
+190 silly npmInstallDependencies   '@types/lodash.throttle@4.1.6',
+190 silly npmInstallDependencies   '@types/react@18.0.28',
+190 silly npmInstallDependencies   '@types/react-dom@18.0.11',
+190 silly npmInstallDependencies   '@types/resize-observer-browser@0.1.7',
+190 silly npmInstallDependencies   '@types/styled-components@5.1.0',
+190 silly npmInstallDependencies   'jest@27.1.0',
+190 silly npmInstallDependencies   'ts-jest@27.0.5',
+190 silly npmInstallDependencies   'typescript-coverage-report@0.7.0',
+190 silly npmInstallDependencies   'lodash.throttle@4.1.1',
+190 silly npmInstallDependencies   'react-draggable@4.4.3',
+190 silly npmInstallDependencies   '@salutejs/use-virtual@2.0.0',
+190 silly npmInstallDependencies   '@testing-library/react@12.0.0',
+190 silly npmInstallDependencies   '@types/babel__traverse@7.20.6',
+190 silly npmInstallDependencies   '@types/color@3.0.2',
+190 silly npmInstallDependencies   'default-browser-id@2.0.0',
+190 silly npmInstallDependencies   'http-server@14.1.1',
+190 silly npmInstallDependencies   'jest-styled-components@7.0.5',
+190 silly npmInstallDependencies   'color@3.1.2'
+190 silly npmInstallDependencies ]
+191 silly npmInstallDependencies backup /Users/shuga2704/Desktop/plasma-ui/packages/plasma-ui/package.json
+192 silly npmInstallDependencies @salutejs/plasma-cy-utils [
+192 silly npmInstallDependencies   '@cypress/react@5.12.0',
+192 silly npmInstallDependencies   '@types/node@18.16.20',
+192 silly npmInstallDependencies   'react@18.2.0',
+192 silly npmInstallDependencies   'react-dom@18.2.0',
+192 silly npmInstallDependencies   'styled-components@5.1.1',
+192 silly npmInstallDependencies   'typescript@5.6.3',
+192 silly npmInstallDependencies   '@types/react@18.0.28',
+192 silly npmInstallDependencies   '@types/react-dom@18.0.11',
+192 silly npmInstallDependencies   '@types/styled-components@5.1.0',
+192 silly npmInstallDependencies   '@types/react-native@0.69.6'
+192 silly npmInstallDependencies ]
+193 silly npmInstallDependencies backup /Users/shuga2704/Desktop/plasma-ui/utils/plasma-cy-utils/package.json
+194 silly npmInstallDependencies @salutejs/plasma-sb-utils [
+194 silly npmInstallDependencies   '@storybook/react@10.3.4',
+194 silly npmInstallDependencies   '@types/node@24.10.1',
+194 silly npmInstallDependencies   'react@18.2.0',
+194 silly npmInstallDependencies   'react-dom@18.2.0',
+194 silly npmInstallDependencies   'styled-components@5.3.1',
+194 silly npmInstallDependencies   '@types/react@18.0.28',
+194 silly npmInstallDependencies   '@types/react-dom@18.0.11',
+194 silly npmInstallDependencies   '@types/styled-components@^5.1.0',
+194 silly npmInstallDependencies   '@emotion/react@11.14.0',
+194 silly npmInstallDependencies   'param-case@^3.0.4'
+194 silly npmInstallDependencies ]
+195 silly npmInstallDependencies backup /Users/shuga2704/Desktop/plasma-ui/utils/plasma-sb-utils/package.json
+196 silly npmInstallDependencies @salutejs/plasma-tokens [
+196 silly npmInstallDependencies   '@types/node@^22.13.13',
+196 silly npmInstallDependencies   'styled-components@5.3.1',
+196 silly npmInstallDependencies   'ts-node@10.2.1',
+196 silly npmInstallDependencies   '@diez/web-sdk-common@10.6.0',
+196 silly npmInstallDependencies   '@salutejs/plasma-tokens-utils@0.54.0',
+196 silly npmInstallDependencies   'jsdom@17.0.0',
+196 silly npmInstallDependencies   'jsdom-global@3.0.2'
+196 silly npmInstallDependencies ]
+197 silly npmInstallDependencies backup /Users/shuga2704/Desktop/plasma-ui/packages/plasma-tokens/package.json
+198 silly npmInstallDependencies @salutejs/plasma-typo [
+198 silly npmInstallDependencies   '@types/node@16.7.13',
+198 silly npmInstallDependencies   'react@18.2.0',
+198 silly npmInstallDependencies   'react-dom@18.2.0',
+198 silly npmInstallDependencies   'styled-components@5.3.1',
+198 silly npmInstallDependencies   '@types/react@18.0.28',
+198 silly npmInstallDependencies   '@types/react-dom@18.0.11',
+198 silly npmInstallDependencies   '@types/styled-components@5.1.0'
+198 silly npmInstallDependencies ]
+199 silly npmInstallDependencies backup /Users/shuga2704/Desktop/plasma-ui/packages/plasma-typo/package.json
+200 silly npmInstallDependencies @salutejs/plasma-ui-docs [
+200 silly npmInstallDependencies   'file-loader@^6.2.0',
+200 silly npmInstallDependencies   'react@18.2.0',
+200 silly npmInstallDependencies   'react-dom@18.2.0',
+200 silly npmInstallDependencies   'styled-components@5.3.0',
+200 silly npmInstallDependencies   'typescript@5.2.2',
+200 silly npmInstallDependencies   '@types/react@18.0.28',
+200 silly npmInstallDependencies   '@types/styled-components@5.1.0',
+200 silly npmInstallDependencies   'fast-glob@3.2.12',
+200 silly npmInstallDependencies   '@salutejs/use-virtual@2.0.0',
+200 silly npmInstallDependencies   'react-docgen-typescript@2.2.2',
+200 silly npmInstallDependencies   '@docusaurus/module-type-aliases@3.1.1',
+200 silly npmInstallDependencies   '@tsconfig/docusaurus@2.0.2',
+200 silly npmInstallDependencies   '@types/react-router-dom@^5.1.8',
+200 silly npmInstallDependencies   '@docusaurus/core@3.6.1',
+200 silly npmInstallDependencies   '@docusaurus/faster@3.8.1',
+200 silly npmInstallDependencies   '@docusaurus/preset-classic@3.6.1',
+200 silly npmInstallDependencies   '@docusaurus/theme-live-codeblock@3.6.1',
+200 silly npmInstallDependencies   '@mdx-js/react@3.0.0',
+200 silly npmInstallDependencies   '@svgr/webpack@8.1.0',
+200 silly npmInstallDependencies   'clsx@^1.1.1',
+200 silly npmInstallDependencies   'prism-react-renderer@2.3.1',
+200 silly npmInstallDependencies   'url-loader@^4.1.1'
+200 silly npmInstallDependencies ]
+201 silly npmInstallDependencies backup /Users/shuga2704/Desktop/plasma-ui/website/plasma-ui-docs/package.json
+202 silly npmInstallDependencies @salutejs/plasma-docs-ui [
+202 silly npmInstallDependencies   'react@18.2.0',
+202 silly npmInstallDependencies   'react-dom@18.2.0',
+202 silly npmInstallDependencies   'styled-components@5.3.1',
+202 silly npmInstallDependencies   '@types/react@18.0.28',
+202 silly npmInstallDependencies   '@types/react-dom@18.0.11',
+202 silly npmInstallDependencies   '@types/styled-components@5.1.0',
+202 silly npmInstallDependencies   '@types/qs@6.9.9',
+202 silly npmInstallDependencies   '@types/marked@3.0.1',
+202 silly npmInstallDependencies   'codesandbox@2.2.3',
+202 silly npmInstallDependencies   'marked@3.0.7',
+202 silly npmInstallDependencies   'qs@6.10.1',
+202 silly npmInstallDependencies   'react-docgen-typescript@2.1.1'
+202 silly npmInstallDependencies ]
+203 silly npmInstallDependencies backup /Users/shuga2704/Desktop/plasma-ui/utils/plasma-docs-ui/package.json
+204 silly npmInstallDependencies writing tempJson {
+204 silly npmInstallDependencies   name: '@salutejs/plasma-core',
+204 silly npmInstallDependencies   version: '1.231.0',
+204 silly npmInstallDependencies   description: 'Core library for Plasma: Salute Design System.',
+204 silly npmInstallDependencies   author: 'Salute Frontend Team <salute.developers@gmail.com>',
+204 silly npmInstallDependencies   publishConfig: { access: 'public' },
+204 silly npmInstallDependencies   license: 'MIT',
+204 silly npmInstallDependencies   main: 'index.js',
+204 silly npmInstallDependencies   module: 'es/index.js',
+204 silly npmInstallDependencies   types: 'index.d.ts',
+204 silly npmInstallDependencies   peerDependencies: {
+204 silly npmInstallDependencies     react: '>=16.13.1',
+204 silly npmInstallDependencies     'react-dom': '>=16.13.1',
+204 silly npmInstallDependencies     'styled-components': '^5.3.1'
+204 silly npmInstallDependencies   },
+204 silly npmInstallDependencies   dependencies: {
+204 silly npmInstallDependencies     '@popperjs/core': '2.9.2',
+204 silly npmInstallDependencies     'focus-visible': '5.2.0',
+204 silly npmInstallDependencies     'lodash.throttle': '4.1.1',
+204 silly npmInstallDependencies     'react-draggable': '4.4.3',
+204 silly npmInstallDependencies     'react-popper': '2.3.0'
+204 silly npmInstallDependencies   },
+204 silly npmInstallDependencies   devDependencies: {
+204 silly npmInstallDependencies     '@babel/cli': '7.24.1',
+204 silly npmInstallDependencies     '@babel/core': '7.24.4',
+204 silly npmInstallDependencies     '@babel/plugin-transform-class-properties': '7.24.1',
+204 silly npmInstallDependencies     '@babel/plugin-transform-react-constant-elements': '7.24.1',
+204 silly npmInstallDependencies     '@babel/preset-env': '7.24.4',
+204 silly npmInstallDependencies     '@babel/preset-react': '7.24.1',
+204 silly npmInstallDependencies     '@babel/preset-typescript': '7.24.1',
+204 silly npmInstallDependencies     '@types/jest': '27.0.1',
+204 silly npmInstallDependencies     '@types/lodash.throttle': '4.1.6',
+204 silly npmInstallDependencies     '@types/node': '15.14.9',
+204 silly npmInstallDependencies     '@types/react': '18.0.28',
+204 silly npmInstallDependencies     '@types/react-dom': '18.0.11',
+204 silly npmInstallDependencies     '@types/resize-observer-browser': '0.1.7',
+204 silly npmInstallDependencies     '@types/styled-components': '5.1.0',
+204 silly npmInstallDependencies     'babel-loader': '8.2.2',
+204 silly npmInstallDependencies     'babel-plugin-annotate-pure-calls': '0.4.0',
+204 silly npmInstallDependencies     'babel-plugin-styled-components': '1.13.2',
+204 silly npmInstallDependencies     'full-icu': '1.3.4',
+204 silly npmInstallDependencies     jest: '27.1.0',
+204 silly npmInstallDependencies     react: '18.2.0',
+204 silly npmInstallDependencies     'react-dom': '18.2.0',
+204 silly npmInstallDependencies     'styled-components': '5.3.1',
+204 silly npmInstallDependencies     'ts-jest': '27.0.5',
+204 silly npmInstallDependencies     'ts-node': '10.2.1',
+204 silly npmInstallDependencies     'typescript-coverage-report': '0.7.0'
+204 silly npmInstallDependencies   },
+204 silly npmInstallDependencies   typeCoverage: { ignoreFiles: [ 'src/**/*component-test.tsx' ], atLeast: 99 },
+204 silly npmInstallDependencies   contributors: [ 'salute.developers@gmail.com' ],
+204 silly npmInstallDependencies   sideEffects: false
+204 silly npmInstallDependencies }
+205 silly npmInstallDependencies writing tempJson {
+205 silly npmInstallDependencies   name: '@salutejs/plasma-ui',
+205 silly npmInstallDependencies   version: '1.354.0',
+205 silly npmInstallDependencies   description: 'Salute Design System.',
+205 silly npmInstallDependencies   main: 'index.js',
+205 silly npmInstallDependencies   module: 'es/index.js',
+205 silly npmInstallDependencies   types: 'index.d.ts',
+205 silly npmInstallDependencies   repository: {
+205 silly npmInstallDependencies     type: 'git',
+205 silly npmInstallDependencies     url: 'ssh://git@github.com:salute-developers/plasma.git'
+205 silly npmInstallDependencies   },
+205 silly npmInstallDependencies   author: 'Salute Frontend Team <salute.developers@gmail.com>',
+205 silly npmInstallDependencies   license: 'MIT',
+205 silly npmInstallDependencies   dependencies: {
+205 silly npmInstallDependencies     color: '3.1.2',
+205 silly npmInstallDependencies     'lodash.throttle': '4.1.1',
+205 silly npmInstallDependencies     'react-draggable': '4.4.3'
+205 silly npmInstallDependencies   },
+205 silly npmInstallDependencies   peerDependencies: {
+205 silly npmInstallDependencies     '@salutejs/plasma-icons': '^1.0.0',
+205 silly npmInstallDependencies     '@salutejs/plasma-tokens': '^1.0.0',
+205 silly npmInstallDependencies     react: '>=16.13.1',
+205 silly npmInstallDependencies     'react-dom': '>=16.13.1',
+205 silly npmInstallDependencies     'styled-components': '^5.1.1'
+205 silly npmInstallDependencies   },
+205 silly npmInstallDependencies   devDependencies: {
+205 silly npmInstallDependencies     '@babel/cli': '7.24.1',
+205 silly npmInstallDependencies     '@babel/core': '7.24.4',
+205 silly npmInstallDependencies     '@babel/plugin-transform-class-properties': '7.24.1',
+205 silly npmInstallDependencies     '@babel/plugin-transform-react-constant-elements': '7.24.1',
+205 silly npmInstallDependencies     '@babel/preset-env': '7.24.4',
+205 silly npmInstallDependencies     '@babel/preset-react': '7.24.1',
+205 silly npmInstallDependencies     '@babel/preset-typescript': '7.24.1',
+205 silly npmInstallDependencies     '@salutejs/use-virtual': '2.0.0',
+205 silly npmInstallDependencies     '@testing-library/react': '12.0.0',
+205 silly npmInstallDependencies     '@types/babel__traverse': '7.20.6',
+205 silly npmInstallDependencies     '@types/color': '3.0.2',
+205 silly npmInstallDependencies     '@types/jest': '26.0.24',
+205 silly npmInstallDependencies     '@types/lodash.throttle': '4.1.6',
+205 silly npmInstallDependencies     '@types/node': '16.7.13',
+205 silly npmInstallDependencies     '@types/react': '18.0.28',
+205 silly npmInstallDependencies     '@types/react-dom': '18.0.11',
+205 silly npmInstallDependencies     '@types/resize-observer-browser': '0.1.7',
+205 silly npmInstallDependencies     '@types/styled-components': '5.1.0',
+205 silly npmInstallDependencies     'babel-loader': '8.2.2',
+205 silly npmInstallDependencies     'babel-plugin-annotate-pure-calls': '0.4.0',
+205 silly npmInstallDependencies     'babel-plugin-styled-components': '1.13.2',
+205 silly npmInstallDependencies     'default-browser-id': '2.0.0',
+205 silly npmInstallDependencies     'http-server': '14.1.1',
+205 silly npmInstallDependencies     jest: '27.1.0',
+205 silly npmInstallDependencies     'jest-styled-components': '7.0.5',
+205 silly npmInstallDependencies     react: '18.2.0',
+205 silly npmInstallDependencies     'react-dom': '18.2.0',
+205 silly npmInstallDependencies     'styled-components': '5.3.1',
+205 silly npmInstallDependencies     'ts-jest': '27.0.5',
+205 silly npmInstallDependencies     typescript: '4.2.4',
+205 silly npmInstallDependencies     'typescript-coverage-report': '0.7.0'
+205 silly npmInstallDependencies   },
+205 silly npmInstallDependencies   publishConfig: { access: 'public' },
+205 silly npmInstallDependencies   typeCoverage: {
+205 silly npmInstallDependencies     ignoreFiles: [ 'src/**/*component-test.tsx', 'src/**/*stories.tsx' ],
+205 silly npmInstallDependencies     atLeast: 98.7
+205 silly npmInstallDependencies   },
+205 silly npmInstallDependencies   jest: {
+205 silly npmInstallDependencies     moduleNameMapper: {
+205 silly npmInstallDependencies       '^styled-components': '<rootDir>/node_modules/styled-components'
+205 silly npmInstallDependencies     }
+205 silly npmInstallDependencies   },
+205 silly npmInstallDependencies   contributors: [
+205 silly npmInstallDependencies     'Vasiliy Loginevskiy',
+205 silly npmInstallDependencies     'Антонов Игорь Александрович',
+205 silly npmInstallDependencies     'Виноградов Антон Александрович',
+205 silly npmInstallDependencies     'Зубаиров Фаниль Асхатович',
+205 silly npmInstallDependencies     'Чельцов Евгений Олегович'
+205 silly npmInstallDependencies   ],
+205 silly npmInstallDependencies   sideEffects: false
+205 silly npmInstallDependencies }
+206 silly npmInstallDependencies writing tempJson {
+206 silly npmInstallDependencies   name: '@salutejs/plasma-tokens',
+206 silly npmInstallDependencies   version: '1.143.0',
+206 silly npmInstallDependencies   description: 'plasma-tokens package',
+206 silly npmInstallDependencies   author: 'Salute Frontend Team <salute.developers@gmail.com>',
+206 silly npmInstallDependencies   license: 'MIT',
+206 silly npmInstallDependencies   module: 'es/index.js',
+206 silly npmInstallDependencies   main: 'index.js',
+206 silly npmInstallDependencies   types: 'index.d.ts',
+206 silly npmInstallDependencies   publishConfig: { access: 'public' },
+206 silly npmInstallDependencies   files: [
+206 silly npmInstallDependencies     'css',              'colors',
+206 silly npmInstallDependencies     'brands',           'es',
+206 silly npmInstallDependencies     'themes',           'themesValues',
+206 silly npmInstallDependencies     'typo',             'typography',
+206 silly npmInstallDependencies     'typographyValues', 'index.d.ts',
+206 silly npmInstallDependencies     'index.d.ts.map',   'index.js',
+206 silly npmInstallDependencies     'index.js.map',     'theme.json'
+206 silly npmInstallDependencies   ],
+206 silly npmInstallDependencies   peerDependencies: { 'styled-components': '^5.1.1' },
+206 silly npmInstallDependencies   devDependencies: {
+206 silly npmInstallDependencies     '@diez/web-sdk-common': '10.6.0',
+206 silly npmInstallDependencies     '@salutejs/plasma-tokens-utils': '0.54.0',
+206 silly npmInstallDependencies     '@types/node': '^22.13.13',
+206 silly npmInstallDependencies     jsdom: '17.0.0',
+206 silly npmInstallDependencies     'jsdom-global': '3.0.2',
+206 silly npmInstallDependencies     'styled-components': '5.3.1',
+206 silly npmInstallDependencies     'ts-node': '10.2.1'
+206 silly npmInstallDependencies   },
+206 silly npmInstallDependencies   contributors: [
+206 silly npmInstallDependencies     'Виноградов Антон Александрович',
+206 silly npmInstallDependencies     'Зубаиров Фаниль Асхатович',
+206 silly npmInstallDependencies     'Vasiliy Loginevskiy'
+206 silly npmInstallDependencies   ],
+206 silly npmInstallDependencies   sideEffects: false
+206 silly npmInstallDependencies }
+207 silly npmInstallDependencies writing tempJson {
+207 silly npmInstallDependencies   name: '@salutejs/plasma-typo',
+207 silly npmInstallDependencies   version: '0.46.0',
+207 silly npmInstallDependencies   description: "Plasma Typography System's tokens",
+207 silly npmInstallDependencies   author: 'Salute Frontend Team <salute.developers@gmail.com>',
+207 silly npmInstallDependencies   publishConfig: { access: 'public' },
+207 silly npmInstallDependencies   license: 'MIT',
+207 silly npmInstallDependencies   files: [ 'lib' ],
+207 silly npmInstallDependencies   main: 'lib/cjs/index.js',
+207 silly npmInstallDependencies   module: 'lib/esm/index.js',
+207 silly npmInstallDependencies   types: 'lib/cjs/index.d.ts',
+207 silly npmInstallDependencies   peerDependencies: {
+207 silly npmInstallDependencies     react: '>=16.13.1',
+207 silly npmInstallDependencies     'react-dom': '>=16.13.1',
+207 silly npmInstallDependencies     'styled-components': '^5.1.1'
+207 silly npmInstallDependencies   },
+207 silly npmInstallDependencies   devDependencies: {
+207 silly npmInstallDependencies     '@types/node': '16.7.13',
+207 silly npmInstallDependencies     '@types/react': '18.0.28',
+207 silly npmInstallDependencies     '@types/react-dom': '18.0.11',
+207 silly npmInstallDependencies     '@types/styled-components': '5.1.0',
+207 silly npmInstallDependencies     react: '18.2.0',
+207 silly npmInstallDependencies     'react-dom': '18.2.0',
+207 silly npmInstallDependencies     'styled-components': '5.3.1'
+207 silly npmInstallDependencies   },
+207 silly npmInstallDependencies   contributors: [ 'salute.developers@gmail.com' ],
+207 silly npmInstallDependencies   sideEffects: false
+207 silly npmInstallDependencies }
+208 silly npmInstallDependencies writing tempJson {
+208 silly npmInstallDependencies   name: '@salutejs/plasma-icons',
+208 silly npmInstallDependencies   version: '1.242.0',
+208 silly npmInstallDependencies   description: 'Salute Design System Icons',
+208 silly npmInstallDependencies   author: 'Salute Frontend Team <salute.developers@gmail.com>',
+208 silly npmInstallDependencies   publishConfig: { access: 'public' },
+208 silly npmInstallDependencies   license: 'MIT',
+208 silly npmInstallDependencies   files: [
+208 silly npmInstallDependencies     'Icon.assets',   'Icons',
+208 silly npmInstallDependencies     'index.d.ts',    'index.js',
+208 silly npmInstallDependencies     'Icon.d.ts',     'Icon.js',
+208 silly npmInstallDependencies     'IconRoot.d.ts', 'IconRoot.js',
+208 silly npmInstallDependencies     'es',            'scalable',
+208 silly npmInstallDependencies     'old',           'css',
+208 silly npmInstallDependencies     'types'
+208 silly npmInstallDependencies   ],
+208 silly npmInstallDependencies   repository: {
+208 silly npmInstallDependencies     type: 'git',
+208 silly npmInstallDependencies     url: 'ssh://git@github.com:salute-developers/plasma.git'
+208 silly npmInstallDependencies   },
+208 silly npmInstallDependencies   exports: {
+208 silly npmInstallDependencies     '.': {
+208 silly npmInstallDependencies       import: './es/index.js',
+208 silly npmInstallDependencies       require: './index.js',
+208 silly npmInstallDependencies       types: './index.d.ts'
+208 silly npmInstallDependencies     },
+208 silly npmInstallDependencies     './16': {
+208 silly npmInstallDependencies       import: './es/scalable/index.16.js',
+208 silly npmInstallDependencies       require: './scalable/index.16.js',
+208 silly npmInstallDependencies       types: './scalable/index.16.d.ts'
+208 silly npmInstallDependencies     },
+208 silly npmInstallDependencies     './24': {
+208 silly npmInstallDependencies       import: './es/scalable/index.24.js',
+208 silly npmInstallDependencies       require: './scalable/index.24.js',
+208 silly npmInstallDependencies       types: './scalable/index.24.d.ts'
+208 silly npmInstallDependencies     },
+208 silly npmInstallDependencies     './36': {
+208 silly npmInstallDependencies       import: './es/scalable/index.36.js',
+208 silly npmInstallDependencies       require: './scalable/index.36.js',
+208 silly npmInstallDependencies       types: './scalable/index.36.d.ts'
+208 silly npmInstallDependencies     },
+208 silly npmInstallDependencies     './css': {
+208 silly npmInstallDependencies       import: './css/es/index.js',
+208 silly npmInstallDependencies       require: './css/cjs/index.js',
+208 silly npmInstallDependencies       types: './index.d.ts'
+208 silly npmInstallDependencies     },
+208 silly npmInstallDependencies     './css/*': './css/*',
+208 silly npmInstallDependencies     './package.json': './package.json'
+208 silly npmInstallDependencies   },
+208 silly npmInstallDependencies   peerDependencies: {
+208 silly npmInstallDependencies     react: '>=16.13.1',
+208 silly npmInstallDependencies     'react-dom': '>=16.13.1',
+208 silly npmInstallDependencies     'styled-components': '^5.3.1'
+208 silly npmInstallDependencies   },
+208 silly npmInstallDependencies   dependencies: { '@linaria/core': '5.0.2', '@linaria/react': '5.0.3' },
+208 silly npmInstallDependencies   devDependencies: {
+208 silly npmInstallDependencies     '@babel/cli': '7.24.1',
+208 silly npmInstallDependencies     '@babel/core': '^7.24.4',
+208 silly npmInstallDependencies     '@babel/plugin-transform-class-properties': '7.24.1',
+208 silly npmInstallDependencies     '@babel/plugin-transform-react-constant-elements': '7.24.1',
+208 silly npmInstallDependencies     '@babel/preset-env': '7.24.4',
+208 silly npmInstallDependencies     '@babel/preset-react': '7.24.1',
+208 silly npmInstallDependencies     '@babel/preset-typescript': '7.24.1',
+208 silly npmInstallDependencies     '@ironkinoko/rollup-plugin-styles': '^4.0.3',
+208 silly npmInstallDependencies     '@linaria/babel-preset': '^5.0.4',
+208 silly npmInstallDependencies     '@linaria/rollup': '^5.0.4',
+208 silly npmInstallDependencies     '@rollup/plugin-babel': '^6.0.4',
+208 silly npmInstallDependencies     '@rollup/plugin-node-resolve': '^15.3.0',
+208 silly npmInstallDependencies     '@rollup/pluginutils': '^5.1.2',
+208 silly npmInstallDependencies     '@types/node': '^16.7.13',
+208 silly npmInstallDependencies     '@types/prettier': '^2.6.2',
+208 silly npmInstallDependencies     '@types/react': '^18.0.28',
+208 silly npmInstallDependencies     '@types/react-dom': '^18.0.11',
+208 silly npmInstallDependencies     '@types/styled-components': '^5.1.0',
+208 silly npmInstallDependencies     'babel-loader': '^8.2.2',
+208 silly npmInstallDependencies     'babel-plugin-annotate-pure-calls': '0.4.0',
+208 silly npmInstallDependencies     'babel-plugin-styled-components': '^1.13.2',
+208 silly npmInstallDependencies     'fast-glob': '^3.3.2',
+208 silly npmInstallDependencies     prettier: '^2.8.8',
+208 silly npmInstallDependencies     react: '^18.2.0',
+208 silly npmInstallDependencies     'react-dom': '^18.2.0',
+208 silly npmInstallDependencies     rollup: '^3.29.5',
+208 silly npmInstallDependencies     'rollup-plugin-css-only': '^4.5.2',
+208 silly npmInstallDependencies     sharp: '^0.32.6',
+208 silly npmInstallDependencies     'styled-components': '5.3.1',
+208 silly npmInstallDependencies     svg2vectordrawable: '^2.9.1',
+208 silly npmInstallDependencies     vite: '4.5.3'
+208 silly npmInstallDependencies   },
+208 silly npmInstallDependencies   contributors: [ 'salute.developers@gmail.com' ],
+208 silly npmInstallDependencies   sideEffects: [ '*.css' ]
+208 silly npmInstallDependencies }
+209 silly npmInstallDependencies writing tempJson {
+209 silly npmInstallDependencies   name: '@salutejs/plasma-sb-utils',
+209 silly npmInstallDependencies   version: '0.232.0',
+209 silly npmInstallDependencies   description: 'Code shared between ui libraries.',
+209 silly npmInstallDependencies   author: 'Salute Frontend Team <salute.developers@gmail.com>',
+209 silly npmInstallDependencies   license: 'MIT',
+209 silly npmInstallDependencies   main: 'lib/index.js',
+209 silly npmInstallDependencies   types: 'lib/index.d.ts',
+209 silly npmInstallDependencies   exports: {
+209 silly npmInstallDependencies     '.': { types: './lib/index.d.ts', default: './lib/index.js' },
+209 silly npmInstallDependencies     './managerVersions': {
+209 silly npmInstallDependencies       types: './lib/managerVersions.d.ts',
+209 silly npmInstallDependencies       default: './lib/managerVersions.js'
+209 silly npmInstallDependencies     },
+209 silly npmInstallDependencies     './package.json': './package.json'
+209 silly npmInstallDependencies   },
+209 silly npmInstallDependencies   repository: {
+209 silly npmInstallDependencies     type: 'git',
+209 silly npmInstallDependencies     url: 'ssh://git@github.com:salute-developers/plasma.git',
+209 silly npmInstallDependencies     directory: 'utils/plasma-sb-utils'
+209 silly npmInstallDependencies   },
+209 silly npmInstallDependencies   dependencies: {
+209 silly npmInstallDependencies     '@emotion/react': '11.14.0',
+209 silly npmInstallDependencies     '@storybook/react': '10.3.4',
+209 silly npmInstallDependencies     'param-case': '^3.0.4'
+209 silly npmInstallDependencies   },
+209 silly npmInstallDependencies   peerDependencies: {
+209 silly npmInstallDependencies     react: '>=16.13.1',
+209 silly npmInstallDependencies     'react-dom': '>=16.13.1',
+209 silly npmInstallDependencies     'styled-components': '^5.1.1'
+209 silly npmInstallDependencies   },
+209 silly npmInstallDependencies   devDependencies: {
+209 silly npmInstallDependencies     '@types/node': '24.10.1',
+209 silly npmInstallDependencies     '@types/react': '18.0.28',
+209 silly npmInstallDependencies     '@types/react-dom': '18.0.11',
+209 silly npmInstallDependencies     '@types/styled-components': '^5.1.0',
+209 silly npmInstallDependencies     react: '18.2.0',
+209 silly npmInstallDependencies     'react-dom': '18.2.0',
+209 silly npmInstallDependencies     'styled-components': '5.3.1'
+209 silly npmInstallDependencies   },
+209 silly npmInstallDependencies   publishConfig: { access: 'public' },
+209 silly npmInstallDependencies   files: [ 'lib' ]
+209 silly npmInstallDependencies }
+210 silly npmInstallDependencies writing tempJson {
+210 silly npmInstallDependencies   name: '@salutejs/plasma-cy-utils',
+210 silly npmInstallDependencies   version: '0.161.0',
+210 silly npmInstallDependencies   description: 'Test helpers shared between ui libraries.',
+210 silly npmInstallDependencies   author: 'Salute Frontend Team <salute.developers@gmail.com>',
+210 silly npmInstallDependencies   license: 'MIT',
+210 silly npmInstallDependencies   main: 'lib/index.js',
+210 silly npmInstallDependencies   types: 'lib/index.d.ts',
+210 silly npmInstallDependencies   repository: {
+210 silly npmInstallDependencies     type: 'git',
+210 silly npmInstallDependencies     url: 'ssh://git@github.com:salute-developers/plasma.git',
+210 silly npmInstallDependencies     directory: 'utils/plasma-cy-utils'
+210 silly npmInstallDependencies   },
+210 silly npmInstallDependencies   peerDependencies: {
+210 silly npmInstallDependencies     react: '>=16.13.1',
+210 silly npmInstallDependencies     'react-dom': '>=16.13.1',
+210 silly npmInstallDependencies     'styled-components': '^5.1.1'
+210 silly npmInstallDependencies   },
+210 silly npmInstallDependencies   devDependencies: {
+210 silly npmInstallDependencies     '@cypress/react': '5.12.0',
+210 silly npmInstallDependencies     '@types/node': '18.16.20',
+210 silly npmInstallDependencies     '@types/react': '18.0.28',
+210 silly npmInstallDependencies     '@types/react-dom': '18.0.11',
+210 silly npmInstallDependencies     '@types/react-native': '0.69.6',
+210 silly npmInstallDependencies     '@types/styled-components': '5.1.0',
+210 silly npmInstallDependencies     react: '18.2.0',
+210 silly npmInstallDependencies     'react-dom': '18.2.0',
+210 silly npmInstallDependencies     'styled-components': '5.1.1',
+210 silly npmInstallDependencies     typescript: '5.6.3'
+210 silly npmInstallDependencies   },
+210 silly npmInstallDependencies   publishConfig: { access: 'public' },
+210 silly npmInstallDependencies   files: [ 'lib' ]
+210 silly npmInstallDependencies }
+211 silly npmInstallDependencies writing tempJson {
+211 silly npmInstallDependencies   name: '@salutejs/plasma-ui-docs',
+211 silly npmInstallDependencies   version: '0.617.0',
+211 silly npmInstallDependencies   description: 'Plasma Documentation.',
+211 silly npmInstallDependencies   author: 'Salute Frontend Team <salute.developers@gmail.com>',
+211 silly npmInstallDependencies   license: 'MIT',
+211 silly npmInstallDependencies   repository: {
+211 silly npmInstallDependencies     type: 'git',
+211 silly npmInstallDependencies     url: 'ssh://git@github.com:salute-developers/plasma.git',
+211 silly npmInstallDependencies     directory: 'website/plasma-ui-docs'
+211 silly npmInstallDependencies   },
+211 silly npmInstallDependencies   private: true,
+211 silly npmInstallDependencies   publishConfig: { access: 'restricted' },
+211 silly npmInstallDependencies   dependencies: {
+211 silly npmInstallDependencies     '@docusaurus/core': '3.6.1',
+211 silly npmInstallDependencies     '@docusaurus/faster': '3.8.1',
+211 silly npmInstallDependencies     '@docusaurus/preset-classic': '3.6.1',
+211 silly npmInstallDependencies     '@docusaurus/theme-live-codeblock': '3.6.1',
+211 silly npmInstallDependencies     '@mdx-js/react': '3.0.0',
+211 silly npmInstallDependencies     '@salutejs/use-virtual': '2.0.0',
+211 silly npmInstallDependencies     '@svgr/webpack': '8.1.0',
+211 silly npmInstallDependencies     clsx: '^1.1.1',
+211 silly npmInstallDependencies     'file-loader': '^6.2.0',
+211 silly npmInstallDependencies     'prism-react-renderer': '2.3.1',
+211 silly npmInstallDependencies     react: '18.2.0',
+211 silly npmInstallDependencies     'react-dom': '18.2.0',
+211 silly npmInstallDependencies     'styled-components': '5.3.0',
+211 silly npmInstallDependencies     'url-loader': '^4.1.1'
+211 silly npmInstallDependencies   },
+211 silly npmInstallDependencies   browserslist: {
+211 silly npmInstallDependencies     production: [ '>0.5%', 'not dead', 'not op_mini all' ],
+211 silly npmInstallDependencies     development: [
+211 silly npmInstallDependencies       'last 1 chrome version',
+211 silly npmInstallDependencies       'last 1 firefox version',
+211 silly npmInstallDependencies       'last 1 safari version'
+211 silly npmInstallDependencies     ]
+211 silly npmInstallDependencies   },
+211 silly npmInstallDependencies   devDependencies: {
+211 silly npmInstallDependencies     '@docusaurus/module-type-aliases': '3.1.1',
+211 silly npmInstallDependencies     '@tsconfig/docusaurus': '2.0.2',
+211 silly npmInstallDependencies     '@types/react': '18.0.28',
+211 silly npmInstallDependencies     '@types/react-router-dom': '^5.1.8',
+211 silly npmInstallDependencies     '@types/styled-components': '5.1.0',
+211 silly npmInstallDependencies     'fast-glob': '3.2.12',
+211 silly npmInstallDependencies     'react-docgen-typescript': '2.2.2',
+211 silly npmInstallDependencies     typescript: '5.2.2'
+211 silly npmInstallDependencies   }
+211 silly npmInstallDependencies }
+212 silly npmInstallDependencies writing tempJson {
+212 silly npmInstallDependencies   name: '@salutejs/plasma-docs-ui',
+212 silly npmInstallDependencies   version: '0.537.0',
+212 silly npmInstallDependencies   description: 'Plasma Documentation.',
+212 silly npmInstallDependencies   author: 'Salute Frontend Team <salute.developers@gmail.com>',
+212 silly npmInstallDependencies   license: 'MIT',
+212 silly npmInstallDependencies   main: 'lib/index.js',
+212 silly npmInstallDependencies   types: 'lib/index.d.ts',
+212 silly npmInstallDependencies   repository: {
+212 silly npmInstallDependencies     type: 'git',
+212 silly npmInstallDependencies     url: 'ssh://git@github.com:salute-developers/plasma.git',
+212 silly npmInstallDependencies     directory: 'utils/plasma-docs-ui'
+212 silly npmInstallDependencies   },
+212 silly npmInstallDependencies   dependencies: {
+212 silly npmInstallDependencies     '@types/marked': '3.0.1',
+212 silly npmInstallDependencies     codesandbox: '2.2.3',
+212 silly npmInstallDependencies     marked: '3.0.7',
+212 silly npmInstallDependencies     qs: '6.10.1',
+212 silly npmInstallDependencies     'react-docgen-typescript': '2.1.1'
+212 silly npmInstallDependencies   },
+212 silly npmInstallDependencies   peerDependencies: {
+212 silly npmInstallDependencies     react: '>=16.13.1',
+212 silly npmInstallDependencies     'react-dom': '>=16.13.1',
+212 silly npmInstallDependencies     'styled-components': '5.3.1'
+212 silly npmInstallDependencies   },
+212 silly npmInstallDependencies   devDependencies: {
+212 silly npmInstallDependencies     '@types/qs': '6.9.9',
+212 silly npmInstallDependencies     '@types/react': '18.0.28',
+212 silly npmInstallDependencies     '@types/react-dom': '18.0.11',
+212 silly npmInstallDependencies     '@types/styled-components': '5.1.0',
+212 silly npmInstallDependencies     react: '18.2.0',
+212 silly npmInstallDependencies     'react-dom': '18.2.0',
+212 silly npmInstallDependencies     'styled-components': '5.3.1'
+212 silly npmInstallDependencies   },
+212 silly npmInstallDependencies   private: true,
+212 silly npmInstallDependencies   publishConfig: { access: 'restricted' },
+212 silly npmInstallDependencies   files: [ 'lib' ]
+212 silly npmInstallDependencies }
+213 silly getNpmExecOpts /Users/shuga2704/Desktop/plasma-ui/utils/plasma-cy-utils undefined
+214 silly npmInstall [
+214 silly npmInstall   'npm',
+214 silly npmInstall   [
+214 silly npmInstall     'install',
+214 silly npmInstall     '--no-audit',
+214 silly npmInstall     '--loglevel error',
+214 silly npmInstall     '--no-progress',
+214 silly npmInstall     '--unsafe-perm'
+214 silly npmInstall   ]
+214 silly npmInstall ]
+215 silly getNpmExecOpts /Users/shuga2704/Desktop/plasma-ui/packages/plasma-typo undefined
+216 silly npmInstall [
+216 silly npmInstall   'npm',
+216 silly npmInstall   [
+216 silly npmInstall     'install',
+216 silly npmInstall     '--no-audit',
+216 silly npmInstall     '--loglevel error',
+216 silly npmInstall     '--no-progress',
+216 silly npmInstall     '--unsafe-perm'
+216 silly npmInstall   ]
+216 silly npmInstall ]
+217 silly getNpmExecOpts /Users/shuga2704/Desktop/plasma-ui/utils/plasma-sb-utils undefined
+218 silly npmInstall [
+218 silly npmInstall   'npm',
+218 silly npmInstall   [
+218 silly npmInstall     'install',
+218 silly npmInstall     '--no-audit',
+218 silly npmInstall     '--loglevel error',
+218 silly npmInstall     '--no-progress',
+218 silly npmInstall     '--unsafe-perm'
+218 silly npmInstall   ]
+218 silly npmInstall ]
+219 silly getNpmExecOpts /Users/shuga2704/Desktop/plasma-ui/packages/plasma-icons undefined
+220 silly npmInstall [
+220 silly npmInstall   'npm',
+220 silly npmInstall   [
+220 silly npmInstall     'install',
+220 silly npmInstall     '--no-audit',
+220 silly npmInstall     '--loglevel error',
+220 silly npmInstall     '--no-progress',
+220 silly npmInstall     '--unsafe-perm'
+220 silly npmInstall   ]
+220 silly npmInstall ]
+221 silly getNpmExecOpts /Users/shuga2704/Desktop/plasma-ui/packages/plasma-tokens undefined
+222 silly npmInstall [
+222 silly npmInstall   'npm',
+222 silly npmInstall   [
+222 silly npmInstall     'install',
+222 silly npmInstall     '--no-audit',
+222 silly npmInstall     '--loglevel error',
+222 silly npmInstall     '--no-progress',
+222 silly npmInstall     '--unsafe-perm'
+222 silly npmInstall   ]
+222 silly npmInstall ]
+223 silly getNpmExecOpts /Users/shuga2704/Desktop/plasma-ui/packages/plasma-core undefined
+224 silly npmInstall [
+224 silly npmInstall   'npm',
+224 silly npmInstall   [
+224 silly npmInstall     'install',
+224 silly npmInstall     '--no-audit',
+224 silly npmInstall     '--loglevel error',
+224 silly npmInstall     '--no-progress',
+224 silly npmInstall     '--unsafe-perm'
+224 silly npmInstall   ]
+224 silly npmInstall ]
+225 silly getNpmExecOpts /Users/shuga2704/Desktop/plasma-ui/packages/plasma-ui undefined
+226 silly npmInstall [
+226 silly npmInstall   'npm',
+226 silly npmInstall   [
+226 silly npmInstall     'install',
+226 silly npmInstall     '--no-audit',
+226 silly npmInstall     '--loglevel error',
+226 silly npmInstall     '--no-progress',
+226 silly npmInstall     '--unsafe-perm'
+226 silly npmInstall   ]
+226 silly npmInstall ]
+227 silly getNpmExecOpts /Users/shuga2704/Desktop/plasma-ui/website/plasma-ui-docs undefined
+228 silly npmInstall [
+228 silly npmInstall   'npm',
+228 silly npmInstall   [
+228 silly npmInstall     'install',
+228 silly npmInstall     '--no-audit',
+228 silly npmInstall     '--loglevel error',
+228 silly npmInstall     '--no-progress',
+228 silly npmInstall     '--unsafe-perm'
+228 silly npmInstall   ]
+228 silly npmInstall ]
+229 silly getNpmExecOpts /Users/shuga2704/Desktop/plasma-ui/utils/plasma-docs-ui undefined
+230 silly npmInstall [
+230 silly npmInstall   'npm',
+230 silly npmInstall   [
+230 silly npmInstall     'install',
+230 silly npmInstall     '--no-audit',
+230 silly npmInstall     '--loglevel error',
+230 silly npmInstall     '--no-progress',
+230 silly npmInstall     '--unsafe-perm'
+230 silly npmInstall   ]
+230 silly npmInstall ]
+231 silly npmInstallDependencies cleanup /Users/shuga2704/Desktop/plasma-ui/packages/plasma-typo/package.json
+232 error Error: ENOENT: no such file or directory, rename '/Users/shuga2704/Desktop/plasma-ui/packages/plasma-typo/package.json.lerna_backup' -> '/Users/shuga2704/Desktop/plasma-ui/packages/plasma-typo/package.json'
+232 error     at Object.renameSync (node:fs:1019:11)
+232 error     at cleanup (/Users/shuga2704/Desktop/plasma-ui/node_modules/lerna/dist/cli.js:2679:32)
+232 error     at done (/Users/shuga2704/Desktop/plasma-ui/node_modules/lerna/dist/cli.js:2683:7)
+232 error     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

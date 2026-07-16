@@ -1,0 +1,227 @@
+import { addMatchImageSnapshotCommand } from '@simonsmith/cypress-image-snapshot/command';
+import 'cypress-file-upload';
+
+const { name } = Cypress.spec;
+
+const componentName = name.split('.').at(0);
+const baseSnapsDir = `${Cypress.env('snapshotsDir')}${Cypress.browser.name}`;
+
+// const getSnapshotPath = () => {
+//     if (Cypress.env('hasSpecGroup')) {
+//         return `${baseSnapsDir}/components`;
+//     }
+
+//     if (Cypress.env('hasComponents')) {
+//         return `${baseSnapsDir}/components/${componentName}`;
+//     }
+
+//     if (['plasma-web', 'plasma-b2c'].includes(Cypress.env('package'))) {
+//         return baseSnapsDir;
+//     }
+
+//     return `${baseSnapsDir}/components`;
+// };
+
+const isUpdateMode =
+    Cypress.env('updateSnapshots') || Cypress.env('UPDATE_SNAPSHOTS') || Cypress.env('CYPRESS_updateSnapshots');
+
+addMatchImageSnapshotCommand({
+    customSnapshotsDir: `${baseSnapsDir}/${componentName}`,
+    customDiffDir: `${baseSnapsDir}/${componentName}/__diff_output__`,
+    failureThreshold: isUpdateMode ? 0 : Cypress.env('threshold'),
+    failureThresholdType: 'percent',
+    capture: 'viewport',
+});
+
+Cypress.Commands.overwrite('matchImageSnapshot', (originalFn, subject, options = {}) => {
+    const sanitizedName = Cypress.currentTest.title.replace('/', 'backslash');
+
+    if (Cypress.browser.family === 'webkit') {
+        /**
+         * Исправление ошибки WebKit FOIT:
+         * текст становится невидимым до тех пор, пока не загрузятся пользовательские шрифты.
+         * fonts.ready резолвится слишком рано, потому что WebKit анализирует @font-face и
+         * заполняет document.fonts в рамках рендеринга, а не синхронно.
+         * 1. Ждем завершения рендеринга, чтобы document.fonts был полностью заполнен
+         */
+        cy.window().then((win) => new Cypress.Promise((resolve) => win.requestAnimationFrame(resolve)));
+
+        /**
+         * 2. Инициируем явный вызов load() для каждого объявленного шрифта
+         */
+        cy.document().then((doc) => {
+            const fontLoads: Promise<FontFace>[] = [];
+            doc.fonts.forEach((f) => fontLoads.push(f.load()));
+            return Promise.all([...fontLoads, doc.fonts.ready]);
+        });
+    }
+
+    if (typeof options === 'string') {
+        return originalFn(subject, options, { specFileRelativeToRoot: '' });
+    }
+
+    return originalFn(subject, { customSnapshotName: sanitizedName, ...options, specFileRelativeToRoot: '' });
+});
+
+const { isPlainObject, last } = Cypress._;
+
+/**
+ * Adds command "cy.waitForResources(name1, name2, ...)"
+ * that checks performance entries for resources that end with the given names.
+ * This command will be available in every spec file.
+ *
+ * @example cy.waitForResources('base.css', 'app.css')
+ *
+ * You can pass additional options, like "timeout"
+ *
+ * @example cy.waitForResources('base.css', 'app.css', { timeout: 3000 })
+ */
+Cypress.Commands.add('waitForResources', (...args) => {
+    let names;
+    let options;
+
+    if (isPlainObject(last(args))) {
+        names = args.slice(0, args.length - 1);
+        options = last(args);
+    } else {
+        names = args;
+        options = {};
+    }
+
+    const timeout = options.timeout || Cypress.config('defaultCommandTimeout');
+
+    cy.log(`Waiting for resources ${names.join(', ')}`);
+
+    cy.window({ log: false }).then(
+        // note that ".then" method has options first, callback second
+        // https://on.cypress.io/then
+        { timeout },
+        (win) => {
+            return new Cypress.Promise((resolve, reject) => {
+                // flag set when we find all names
+                let foundResources;
+
+                // control how long we should try finding the resource
+                // and if it is still not found. An explicit "reject"
+                // allows us to show nice informative message
+
+                const interval = setInterval(() => {
+                    foundResources = names.every((name) => {
+                        return win.performance.getEntriesByType('resource').find((item) => item.name.endsWith(name));
+                    });
+
+                    if (!foundResources) {
+                        // some resource not found, will try again
+                        return;
+                    }
+
+                    cy.log('Found all resources');
+                    clearInterval(interval);
+                    resolve();
+                }, 100);
+
+                setTimeout(() => {
+                    if (foundResources) {
+                        // nothing needs to be done, successfully found the resource
+                        return;
+                    }
+
+                    clearInterval(interval);
+                    reject(new Error(`Timed out waiting for resources ${names.join(', ')}`));
+                }, timeout);
+            });
+        },
+    );
+});
+
+export enum navigate {
+    LEFT = '{leftarrow}',
+    UP = '{uparrow}',
+    RIGHT = '{rightarrow}',
+    DOWN = '{downarrow}',
+    ENTER = '{enter}',
+}
+
+type SendNavigatioActionParams = Partial<Cypress.TypeOptions> & {
+    times?: number;
+};
+
+Cypress.Commands.add(
+    'sendNavigateAction',
+    { prevSubject: 'optional' },
+    (subject: HTMLElement | void, dir: navigate, opts: SendNavigatioActionParams = {}) => {
+        const { times = 1, ...typeOptions } = opts;
+        const sequence: navigate[] = Array.isArray(dir) ? dir : Array(times).fill(dir);
+
+        const options = {
+            delay: 350, // анимация перемещения фокуса
+            waitForAnimation: true,
+            ...typeOptions,
+        };
+
+        const chainer = subject ? cy.wrap(subject, { log: false }) : cy.get('body');
+
+        return sequence.reduce<Cypress.Chainable>((acc, key) => {
+            return acc.type(key, options);
+        }, chainer);
+    },
+);
+
+Cypress.Commands.add(
+    'triggerSpatNavEvent',
+    { prevSubject: 'element' },
+    (subject: HTMLElement, dir: 'left' | 'right' | 'up' | 'down', times = 1) => {
+        return Array({ length: times }).reduce<Cypress.Chainable>((acc) => {
+            return acc.trigger('navbeforefocus', {
+                eventConstructor: 'CustomEvent',
+                detail: { dir },
+            });
+        }, cy.wrap(subject));
+    },
+);
+
+Cypress.Commands.add('mockImage', (selector: string, path: string) => {
+    cy.fixture(path, 'base64').then((src) => {
+        cy.get(selector).invoke('attr', 'src', `data:image/png;base64, ${src}`);
+    });
+});
+
+Cypress.Commands.add('mockBackgroundImage', (selector: string, path: string) => {
+    cy.fixture(path, 'base64').then((src) => {
+        cy.get(selector).invoke('css', 'background-image', `url(data:image/jpg;base64,${src})`);
+    });
+});
+
+Cypress.Commands.add('waitForFocusElement', { prevSubject: 'element' }, (subject: HTMLElement, timeout = 300) => {
+    const specsUa = Cypress.config('userAgent');
+
+    if (specsUa === 'sberbox') {
+        cy.wrap(subject, { timeout }).should('be.visible').should('be.focused');
+    }
+});
+
+/**
+ * Cross-browser key press: uses cy.realPress in Chromium, cy.trigger in WebKit
+ * (WebKit does not support Chrome DevTools Protocol required by cypress-real-events)
+ */
+declare global {
+    // eslint-disable-next-line @typescript-eslint/no-namespace
+    namespace Cypress {
+        interface Chainable {
+            pressKey(key: string): Chainable<void>;
+        }
+    }
+}
+
+Cypress.Commands.add('pressKey', (key: string, currentElem?: string) => {
+    if (Cypress.browser.family === 'webkit') {
+        if (currentElem) {
+            cy.get(currentElem).trigger('keydown', { key, code: key, bubbles: true, cancelable: true });
+            return;
+        }
+
+        cy.focused().trigger('keydown', { key, code: key, bubbles: true, cancelable: true });
+    } else {
+        cy.realPress(key as Parameters<Cypress.Chainable['realPress']>[0]);
+    }
+});
