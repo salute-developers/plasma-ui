@@ -9,8 +9,6 @@
 ## Состав:
 
 -   @salutejs/plasma-ui
--   @salutejs/plasma-web
--   @salutejs/plasma-b2c
 -   @salutejs/plasma-tokens
 -   @salutejs/plasma-tokens-web
 -   @salutejs/plasma-tokens-b2c
@@ -21,18 +19,6 @@
 Пакет с набором готовых компонентов и утилит для создания Canvas App. Компоненты реализованы с помощью [React](https://reactjs.org/). Для компонентов доступны [Storybook](https://bit.ly/3xRatFG) и [документация](https://bit.ly/3HWggy3).
 
 [![npm ui](https://img.shields.io/npm/v/@salutejs/plasma-ui?label=%40salutejs%2Fplasma-ui&style=for-the-badge)](https://www.npmjs.com/package/@salutejs/plasma-ui)
-
-### plasma-web
-
-Пакет с набором готовых компонентов для создания веб-приложений направленных на B2B-сегмент. [Документация](https://bit.ly/3OtwX5v) и [Storybook](https://bit.ly/3EH1x7b).
-
-[![npm ui](https://img.shields.io/npm/v/@salutejs/plasma-web?label=%40salutejs%2Fplasma-web&style=for-the-badge)](https://www.npmjs.com/package/@salutejs/plasma-web)
-
-### plasma-b2c
-
-Пакет с набором готовых компонентов для создания веб-приложений ориентированных на B2C-сегмент. [Документация](https://bit.ly/3OtwX5v) и [Storybook](https://bit.ly/44CjWib).
-
-[![npm ui](https://img.shields.io/npm/v/@salutejs/plasma-b2c?label=%40salutejs%2Fplasma-b2c&style=for-the-badge)](https://www.npmjs.com/package/@salutejs/plasma-b2c)
 
 ### plasma-tokens, plasma-tokens-web, plasma-tokens-b2c
 
@@ -47,6 +33,16 @@
 Пакет с набором иконок, которые доступны к просмотру в [хранилище](https://bit.ly/42hgVSf), а также в [Storybook](https://bit.ly/3LhwBwC) и [документации](https://bit.ly/3xQMjuM).
 
 [![npm ui](https://img.shields.io/npm/v/@salutejs/plasma-icons?label=%40salutejs%2Fplasma-icons&style=for-the-badge)](https://www.npmjs.com/package/@salutejs/plasma-icons)
+
+## Начальная установка
+
+Выполните команды из корня репозитория в указанной последовательности:
+
+```sh
+npm install --ignore-scripts
+npm run bootstrap
+npm run build
+```
 
 ## Быстрый старт
 
@@ -100,4 +96,4 @@ export default App;
 ## Обратная связь
 
 Разработка дизайн-системы Plasma ведется в репозитории https://github.com/salute-developers/plasma.
-Если вы хотите добавить новый компонент, вы можете прислать пулл-реквест следуя [правилам разработки](./CONTRIBUTING.md). Также вы можете [завести задачу](https://github.com/salute-developers/plasma/issues/new) на создание нового компонента или описать некоректное поведение текущего.
+Если вы хотите добавить новый компонент, вы можете прислать pull request. Также вы можете [завести задачу](https://github.com/salute-developers/plasma/issues/new) на создание нового компонента или описать некорректное поведение текущего.
