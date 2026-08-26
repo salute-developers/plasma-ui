@@ -6,13 +6,13 @@
 
 Использование дизайн-системы Plasma позволяет реализовать [Canvas App](https://bit.ly/3Mx0UQq) как часть экосистемы виртуальных ассистентов семейства "Салют" и клиентские приложения B2B- и B2C-ориентированности. Все текущие приложения в экосистеме Salute реализованы с помощью Plasma.
 
-## Состав:
+## Состав
 
--   @salutejs/plasma-ui
--   @salutejs/plasma-tokens
--   @salutejs/plasma-tokens-web
--   @salutejs/plasma-tokens-b2c
--   @salutejs/plasma-icons
+- @salutejs/plasma-ui
+- @salutejs/plasma-tokens
+- @salutejs/plasma-tokens-web
+- @salutejs/plasma-tokens-b2c
+- @salutejs/plasma-icons
 
 ### plasma-ui
 
@@ -75,9 +75,9 @@ CI запускает `npm test` для любого pull request и вручн�
 
 `Canvas App` это web-приложение, для его создания вам потребуется:
 
--   `Node.js` & `npm` [установка](https://nodejs.org/ru/)
--   `Create React App` – для быстрого создания основы вашего приложения. [CRA](https://create-react-app.dev/docs/getting-started#quick-start)
--   `React` Как основа для web интерфейса. Погружение для новичков: https://ru.reactjs.org/tutorial/tutorial.html
+- `Node.js` & `npm` [установка](https://nodejs.org/ru/)
+- `Create React App` – для быстрого создания основы вашего приложения. [CRA](https://create-react-app.dev/docs/getting-started#quick-start)
+- `React` Как основа для web интерфейса. Погружение для новичков: <https://ru.reactjs.org/tutorial/tutorial.html>
 
 ### Установка
 
@@ -122,5 +122,7 @@ export default App;
 
 ## Обратная связь
 
-Разработка дизайн-системы Plasma ведется в репозитории https://github.com/salute-developers/plasma.
+Разработка дизайн-системы Plasma ведется в репозитории <https://github.com/salute-developers/plasma>.
 Если вы хотите добавить новый компонент, вы можете прислать pull request. Также вы можете [завести задачу](https://github.com/salute-developers/plasma/issues/new) на создание нового компонента или описать некорректное поведение текущего.
+
+###
