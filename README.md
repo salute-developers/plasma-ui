@@ -71,6 +71,12 @@ CI запускает `npm test` для любого pull request и вручн�
 
 Для любого pull request CI также собирает Storybook. Для внутренних веток репозитория сборка публикуется в S3 по пути `pr/plasma-ui/pr-<номер PR>/ui-storybook/`, а ссылка добавляется в sticky-комментарий к PR. После закрытия или слияния PR его Storybook-превью удаляется из S3. Для fork-PR выполняется только сборка без доступа к секретам.
 
+## Публикация в npm
+
+Для внутренних pull request в `main` и `dev` публикуется canary-версия. После влития изменений в `main` автоматически публикуется latest-версия. Release candidate можно запустить вручную через workflow `Publish npm`; он собирается из ветки `dev`.
+
+Тип повышения версии определяется conventional commits: `fix` повышает patch, `feat` — minor, а `BREAKING CHANGE` — major. Затем Lerna обновляет independent-версии изменённых пакетов из `packages/`, создаёт commit и tags и публикует их в npm. Все пакеты из `utils/` помечены как private и не публикуются. Для публикации используется встроенный `github.token`; из repository secrets нужен только `NPM_REGISTRY_TOKEN`.
+
 ## Быстрый старт
 
 `Canvas App` это web-приложение, для его создания вам потребуется:

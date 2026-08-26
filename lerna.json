@@ -12,6 +12,7 @@
         "website/plasma-ui-docs"
     ],
     "version": "independent",
+    "useWorkspaces": true,
     "ignoreChanges": ["*.md", "*.component-test.tsx", "package-lock.json"],
     "loglevel": "verbose",
     "exact": true,
@@ -20,7 +21,11 @@
             "npmClientArgs": ["--no-audit", "--loglevel error", "--no-progress", "--unsafe-perm"]
         },
         "publish": {
-            "verifyAccess": false
+            "verifyAccess": false,
+            "private": false
+        },
+        "version": {
+            "private": false
         },
         "list": {
             "ignoreChanges": ["*.md", "package-lock.json"]

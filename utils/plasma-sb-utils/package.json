@@ -1,6 +1,7 @@
 {
   "name": "@salutejs/plasma-sb-utils",
   "version": "0.232.0",
+  "private": true,
   "description": "Code shared between ui libraries.",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "license": "MIT",
@@ -40,9 +41,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "5.3.1"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "files": [
     "lib"
