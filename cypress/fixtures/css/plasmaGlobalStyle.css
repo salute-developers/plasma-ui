@@ -2,3 +2,8 @@
 @import './SBSansText.0.2.0.css';
 @import './SBSansDisplay.0.2.0.css';
 @import './SBSansTextMono.0.2.0.css';
+
+html {
+    background-color: #080808;
+    color: rgba(255, 255, 255, 0.96);
+}
