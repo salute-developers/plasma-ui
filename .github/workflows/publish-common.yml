@@ -1,0 +1,62 @@
+name: Publish reusable workflow
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        description: Git ref to publish
+        default: ''
+      auto-options:
+        type: string
+        description: Additional arguments for auto
+        default: ''
+    secrets:
+      npm_registry_token:
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+      pull-requests: write
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      NPM_REGISTRY_TOKEN: ${{ secrets.npm_registry_token }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ inputs.ref }}
+          token: ${{ github.token }}
+
+      - name: Restore migrated package tags
+        run: node scripts/ensure-release-tags.js
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-progress --ignore-scripts
+
+      - name: Bootstrap packages
+        run: npm run bootstrap
+
+      - name: Build packages
+        run: npm run build
+
+      - name: Show release information
+        run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
+
+      - name: Publish packages
+        run: npm run release -- ${{ inputs.auto-options }}

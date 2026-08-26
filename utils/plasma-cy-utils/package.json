@@ -1,6 +1,7 @@
 {
   "name": "@salutejs/plasma-cy-utils",
   "version": "0.161.0",
+  "private": true,
   "description": "Test helpers shared between ui libraries.",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "license": "MIT",
@@ -31,9 +32,6 @@
     "react-dom": "18.2.0",
     "styled-components": "5.1.1",
     "typescript": "5.6.3"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "files": [
     "lib"

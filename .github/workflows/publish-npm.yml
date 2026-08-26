@@ -1,0 +1,67 @@
+name: Publish npm
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+    inputs:
+      release:
+        description: Release type
+        required: true
+        type: choice
+        options:
+          - rc
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || inputs.release || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  publish-canary:
+    name: Publish canary version
+    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+      pull-requests: write
+    uses: ./.github/workflows/publish-common.yml
+    with:
+      ref: refs/pull/${{ github.event.pull_request.number }}/merge
+      auto-options: --no-changelog
+    secrets:
+      npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
+
+  publish-latest:
+    name: Publish latest version
+    if: ${{ github.event_name == 'push' }}
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+      pull-requests: write
+    uses: ./.github/workflows/publish-common.yml
+    with:
+      auto-options: --no-changelog
+    secrets:
+      npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
+
+  publish-rc:
+    name: Publish release candidate
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.release == 'rc' }}
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+      pull-requests: write
+    uses: ./.github/workflows/publish-common.yml
+    with:
+      ref: dev
+      auto-options: --no-changelog
+    secrets:
+      npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
