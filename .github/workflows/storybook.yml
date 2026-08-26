@@ -1,0 +1,71 @@
+name: Storybook preview
+
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  storybook:
+    name: Build and deploy Storybook
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    env:
+      STORYBOOK_BASE_URL: https://plasma.sberdevices.ru
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-progress --ignore-scripts
+
+      - name: Bootstrap packages
+        run: npm run bootstrap
+
+      - name: Build packages
+        run: npm run build
+
+      - name: Build Storybook
+        run: npm run storybook:build
+
+      - name: Install s3cmd
+        if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' }}
+        run: pip3 install s3cmd
+
+      - name: Deploy Storybook to S3
+        if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' }}
+        run: >
+          s3cmd
+          --access_key ${{ secrets.AWS_ACCESS_KEY }}
+          --secret_key ${{ secrets.AWS_SECRET_KEY }}
+          --host ${{ secrets.AWS_HOST }}
+          --host-bucket ${{ secrets.AWS_HOST }}
+          --bucket-location ${{ secrets.AWS_BUCKET_LOCATION }}
+          --signature-v2
+          --delete-removed
+          --no-mime-magic
+          sync
+          ./packages/plasma-ui/build-sb/
+          s3://${{ secrets.AWS_BUCKET_NAME }}/pr/plasma-ui/pr-${{ github.event.pull_request.number }}/ui-storybook/
+
+      - name: Add Storybook link to pull request
+        if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' }}
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: Storybook
+          message: |
+            Storybook preview deployed!
+
+            [Open Storybook](${{ env.STORYBOOK_BASE_URL }}/pr/plasma-ui/pr-${{ github.event.pull_request.number }}/ui-storybook/)

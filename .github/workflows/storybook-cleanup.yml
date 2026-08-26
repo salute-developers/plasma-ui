@@ -1,0 +1,36 @@
+name: Storybook preview cleanup
+
+on:
+  pull_request:
+    types: [closed]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  cleanup:
+    name: Remove Storybook preview from S3
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Install s3cmd
+        run: pip3 install s3cmd
+
+      - name: Remove Storybook preview
+        run: >
+          s3cmd
+          --access_key ${{ secrets.AWS_ACCESS_KEY }}
+          --secret_key ${{ secrets.AWS_SECRET_KEY }}
+          --host ${{ secrets.AWS_HOST }}
+          --host-bucket ${{ secrets.AWS_HOST }}
+          --bucket-location ${{ secrets.AWS_BUCKET_LOCATION }}
+          --signature-v2
+          del
+          --recursive
+          s3://${{ secrets.AWS_BUCKET_NAME }}/pr/plasma-ui/pr-${{ github.event.pull_request.number }}/ui-storybook/
