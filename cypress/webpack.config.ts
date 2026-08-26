@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs-extra';
 
-import babelrc from '../packages/plasma-ui/babel.config';
+import babelrc from '../.babelrc';
 
 const resolveModule = (...fromPaths) => (...pathSegments) => path.resolve(...fromPaths, ...pathSegments);
 
@@ -9,18 +9,28 @@ const rootPath = path.resolve(__dirname, '..');
 const packsPath = path.join(rootPath, 'packages');
 const resolveInsidePackage = resolveModule('packages', process.env.PACKAGE_NAME, 'node_modules');
 
-const dummyModule = `
-"use strict";
+const resolveFromRoot = (moduleName: string) =>
+    path.dirname(
+        require.resolve(path.join(moduleName, 'package.json'), {
+            paths: [rootPath],
+        }),
+    );
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-`;
+const resolveInsidePackageOrRoot = (...pathSegments: string[]) => {
+    const packagePath = resolveInsidePackage(...pathSegments);
+
+    if (fs.existsSync(packagePath)) {
+        return packagePath;
+    }
+
+    return resolveFromRoot(path.join(...pathSegments));
+};
 
 ['plasma-ui'].forEach((pack) => {
     const packIndexPath = path.join(packsPath, pack, 'index.js');
-    if (!fs.ensureFileSync(packIndexPath)) {
-        fs.writeFileSync(packIndexPath, dummyModule);
+
+    if (!fs.pathExistsSync(packIndexPath)) {
+        throw new Error(`Package ${pack} is not built. Run \`npm run build\` before component tests.`);
     }
 });
 
@@ -49,14 +59,14 @@ export const getWebpackConfig = () => {
             extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
             modules: ['node_modules'],
             alias: {
-                'styled-components': resolveInsidePackage('styled-components'),
-                react: resolveInsidePackage('react'),
-                'react-dom': resolveInsidePackage('react-dom'),
-                '@salutejs/plasma-icons': resolveInsidePackage('@salutejs', 'plasma-icons'),
-                '@salutejs/plasma-cy-utils': resolveInsidePackage('@salutejs', 'plasma-cy-utils'),
+                'styled-components': resolveInsidePackageOrRoot('styled-components'),
+                react: resolveInsidePackageOrRoot('react'),
+                'react-dom': resolveInsidePackageOrRoot('react-dom'),
+                '@salutejs/plasma-icons': resolveInsidePackageOrRoot('@salutejs', 'plasma-icons'),
+                '@salutejs/plasma-cy-utils': resolveFromRoot('@salutejs/plasma-cy-utils'),
                 // Переопределение путей для тестов внутри plasma-new-hope
                 'src/examples/components': resolveModule(packsPath, process.env.PACKAGE_NAME, 'src', 'components')(),
-                'override/_Icon': resolveInsidePackage('@salutejs', 'plasma-icons'),
+                'override/_Icon': resolveInsidePackageOrRoot('@salutejs', 'plasma-icons'),
             },
             fallback: {
                 crypto: false,

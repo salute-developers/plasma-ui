@@ -56,11 +56,23 @@ Cypress.Commands.overwrite('matchImageSnapshot', (originalFn, subject, options =
         });
     }
 
-    if (typeof options === 'string') {
-        return originalFn(subject, options, { specFileRelativeToRoot: '' });
+    const takeSnapshot = (snapshotSubject: JQuery<HTMLElement> | Document | Window) => {
+        if (typeof options === 'string') {
+            return originalFn(snapshotSubject, options, { specFileRelativeToRoot: '' });
+        }
+
+        return originalFn(snapshotSubject, {
+            customSnapshotName: sanitizedName,
+            ...options,
+            specFileRelativeToRoot: '',
+        });
+    };
+
+    if (subject) {
+        return takeSnapshot(subject);
     }
 
-    return originalFn(subject, { customSnapshotName: sanitizedName, ...options, specFileRelativeToRoot: '' });
+    return cy.document().then(takeSnapshot);
 });
 
 const { isPlainObject, last } = Cypress._;

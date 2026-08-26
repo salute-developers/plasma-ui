@@ -44,6 +44,33 @@ npm run bootstrap
 npm run build
 ```
 
+Для запуска component-тестов должен быть установлен и запущен Docker.
+
+## Тесты
+
+Все Cypress component-тесты:
+
+```sh
+npm test
+```
+
+Component-тесты запускаются в закреплённом Docker-образе, чтобы visual snapshots были одинаковыми локально и в CI. Можно ограничить запуск одним или несколькими компонентами:
+
+```sh
+COMPONENTS=Button npm test
+COMPONENTS=Button,Grid npm test
+```
+
+Для обновления visual snapshots:
+
+```sh
+CYPRESS_updateSnapshots=true npm test
+```
+
+CI запускает `npm test` для любого pull request и вручную через GitHub Actions. При падении Cypress диффы и screenshots сохраняются как artifact workflow.
+
+Для любого pull request CI также собирает Storybook. Для внутренних веток репозитория сборка публикуется в S3 по пути `pr/plasma-ui/pr-<номер PR>/ui-storybook/`, а ссылка добавляется в sticky-комментарий к PR. После закрытия или слияния PR его Storybook-превью удаляется из S3. Для fork-PR выполняется только сборка без доступа к секретам.
+
 ## Быстрый старт
 
 `Canvas App` это web-приложение, для его создания вам потребуется:
