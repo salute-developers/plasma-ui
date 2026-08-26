@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount, CypressTestDecorator } from '@salutejs/plasma-cy-utils';
-
-import { Fade } from '.';
+import { Fade } from '@salutejs/plasma-core';
 
 describe('plasma-core: Fade', () => {
     it('simple', () => {
